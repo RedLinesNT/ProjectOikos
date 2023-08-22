@@ -20,10 +20,12 @@ namespace Oikos.Core {
     /// <summary>
     /// This custom Logger allows the messages (Debug.Log/Warning/Error/...) to be stylized in the editor's console,
     /// and log files to be written directly from a build in a more readable way than the engine can offer.
-    ///
+    /// </summary>
+    /// 
+    /// <description>
     /// The PreProcessor Definition "LOGGER_ENABLE" must be active for this logger to work, and "LOGGER_ENABLE_FILE" for the Logger
     /// to write Log Files in a Standalone build.
-    /// </summary>
+    /// </description>
     public static class Logger {
 
         #region Attributes
