@@ -116,6 +116,6 @@ L'entièreté des attributs doivent être en private. Utilisez à la place des <
   
 <hr>
 
-Le projet à <i>909</i> lignes de code (C#)
+Le projet à <i>1026</i> lignes de code (C#)
 
 <hr>  
