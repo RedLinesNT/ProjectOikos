@@ -112,7 +112,9 @@ L'entièreté des attributs doivent être en private. Utilisez à la place des <
 	- Documentation du code
 
   Documents utiles :<br>
-    - Il n'y a pour le moment pas de documentation...
+<!--ts-->
+   * <a href="Docs/Import_Texture_Documentation.pdf">Exporter ses textures (Importation dans le moteur)</a>
+<!--te-->
   
 <hr>
 
