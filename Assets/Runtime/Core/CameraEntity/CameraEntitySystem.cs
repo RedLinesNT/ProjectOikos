@@ -88,7 +88,7 @@ namespace Oikos.Core {
         public static void UnregisterCameraEntity(ACameraEntity _camEntity) {
             bool _isEntityRegistered = GetCameraEntity(_camEntity.CameraIdentifier); //Is this CameraEntity registered
             
-            if(_isEntityRegistered) {
+            if(!_isEntityRegistered) {
                 Logger.TraceError("Camera Entity System", $"Unable to unregister a CameraEntity. This CameraEntity isn't registered!");
                 return;
             }
