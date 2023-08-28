@@ -38,18 +38,21 @@ namespace Oikos.Core {
         private void Awake() {
             CameraComponent = GetComponent<Camera>(); //Try to get the Camera component
             
-            //TODO: Register the camera inside the Camera Entity System
             OnAwakeEntity(); //Call this method to every children
         }
 
-        private void Start() => OnStartEntity();
+        private void Start() {
+            CameraEntitySystem.RegisterCameraEntity(this); //Register this Camera Entity
+            
+            OnStartEntity(); //Call this method on every children
+        }
 
         private void OnEnable() => OnEnableEntity();
 
         private void OnDisable() => OnDisableEntity();
 
         private void OnDestroy() {
-            //TODO: Unregister the camera to the Camera Entity System
+            CameraEntitySystem.UnregisterCameraEntity(this); //Unregister this Camera Entity
             
             OnDestroyEntity(); //Call this method to every children
         }
