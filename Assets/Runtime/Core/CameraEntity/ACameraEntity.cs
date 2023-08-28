@@ -46,12 +46,18 @@ namespace Oikos.Core {
         #region MonoBehaviour's methods
 
         private void Awake() {
+            CameraComponent = GetComponent<Camera>(); //Try to get the Camera component
+            
             OnAwakeEntity(); //Call this method to every children
         }
 
         private void Start() {
             //Check if we should use the Camera Component attribute override value or the one set by script
-            if(cameraOverrideField == null) CameraComponent = GetComponent<Camera>(); //Try to get the Camera component
+            if(cameraOverrideField == null) {
+                CameraComponent = GetComponent<Camera>(); //Try to get the Camera component
+            } else {
+                CameraComponent = cameraOverrideField; //Set the Override Camera
+            }
             
             CameraEntitySystem.RegisterCameraEntity(this); //Register this Camera Entity
             
