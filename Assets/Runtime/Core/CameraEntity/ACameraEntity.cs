@@ -10,8 +10,18 @@ namespace Oikos.Core {
     /// There are different methods for classes inheriting from this one, which want to use MonoBehaviour methods such as "Start", "Update", ... 
     /// See the virtual methods of this class for more details.
     /// </description>
+    /// <inEditor>
+    /// You can setup the references of this instance via the Engine's editor GUI
+    /// </inEditor>
     [Serializable] public abstract class ACameraEntity : MonoBehaviour {
 
+        #region Attributes
+
+        [Header("Camera Entity References")]
+        [SerializeField, InspectorName("Camera Component"), Tooltip("The Camera Component to use.")] private Camera cameraOverrideField = null;
+        
+        #endregion
+        
         #region Properties
 
         /// <summary>
@@ -36,12 +46,13 @@ namespace Oikos.Core {
         #region MonoBehaviour's methods
 
         private void Awake() {
-            CameraComponent = GetComponent<Camera>(); //Try to get the Camera component
-            
             OnAwakeEntity(); //Call this method to every children
         }
 
         private void Start() {
+            //Check if we should use the Camera Component attribute override value or the one set by script
+            if(cameraOverrideField == null) CameraComponent = GetComponent<Camera>(); //Try to get the Camera component
+            
             CameraEntitySystem.RegisterCameraEntity(this); //Register this Camera Entity
             
             OnStartEntity(); //Call this method on every children
