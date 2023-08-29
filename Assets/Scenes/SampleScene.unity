@@ -320,6 +320,14 @@ MonoBehaviour:
   cameraOverrideField: {fileID: 1992499384}
   target: {fileID: 1529676152}
   cameraAnchor: {fileID: 1160757418}
+  minXLookAngle: -60
+  maxXLookAngle: 60
+  minZoom: 30
+  maxZoom: 70
+  zoomSmoothing: 0.25
+  movementSmoothing: 0.25
+  mouseSensitivity: 1
+  zoomSensitivity: 1
 --- !u!4 &1011491233
 Transform:
   m_ObjectHideFlags: 0
