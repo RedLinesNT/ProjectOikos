@@ -326,8 +326,8 @@ MonoBehaviour:
   maxZoom: 70
   zoomSmoothing: 0.25
   movementSmoothing: 0.25
-  mouseSensitivity: 1
-  zoomSensitivity: 1
+  mouseSensitivity: 5
+  zoomSensitivity: 10
 --- !u!4 &1011491233
 Transform:
   m_ObjectHideFlags: 0
