@@ -87,7 +87,7 @@ namespace Oikos.GameLogic.Controller {
         private protected override void OnLateUpdateEntity() {
             ZoomBehaviour();
             
-            if(Input.GetMouseButton(0)) CameraMovementBehaviour();
+            if(Input.GetMouseButton(1)) CameraMovementBehaviour();
         }
 
         #endregion
