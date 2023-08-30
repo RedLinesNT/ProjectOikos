@@ -37,12 +37,12 @@ namespace Oikos.GameLogic.Controller {
         #region Events
 
         /// <summary>
-        /// Triggered when a valid object (Object in a the specified layers) has been hit
+        /// Triggered when a valid object has been hit (Object's layer are in the ones specified)
         /// </summary>
         private Action<GameObject> onValidObjectHit;
         
         /// <summary>
-        /// Triggered when a invalid object (Object not in the specified layers) has been hit
+        /// Triggered when a invalid object has been hit (Object's layer are not in the ones specified)
         /// </summary>
         private Action<GameObject> onInvalidObjectHit;
 
@@ -55,10 +55,18 @@ namespace Oikos.GameLogic.Controller {
         /// </summary>
         public LayerMask HitMasks { get { return maskHit; } set { maskHit = value; } }
 
+        /// <summary>
+        /// Triggered when a valid object has been hit (Object's layer are in the ones specified)
+        /// </summary>
+        public event Action<GameObject> OnValidObjectHit { add { onValidObjectHit += value; } remove { onValidObjectHit -= value; } }
+        
+        /// <summary>
+        /// Triggered when a invalid object has been hit (Object's layer are not in the ones specified)
+        /// </summary>
+        public event Action<GameObject> OnInvalidObjectHit { add { onInvalidObjectHit += value; } remove { onInvalidObjectHit -= value; } }
+        
         #endregion
-
-        
-        
+      
         #region MonoBehaviour's methods
 
         private void Awake() {
