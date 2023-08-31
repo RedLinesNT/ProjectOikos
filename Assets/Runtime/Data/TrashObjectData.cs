@@ -7,6 +7,7 @@ namespace Oikos.Data {
 
         #region Attributes
 
+        [Header("Trash Item References")]
         [SerializeField] private E_TRASH_OBJECT_TYPE identifier;
         [SerializeField] private string nameTranslationIdentifierString;
         [SerializeField] private string descriptionTranslationIdentifierString;
