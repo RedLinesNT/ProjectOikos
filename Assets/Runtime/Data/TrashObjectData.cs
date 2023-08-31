@@ -1,5 +1,6 @@
 using Oikos.Types;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace Oikos.Data {
 
@@ -14,10 +15,10 @@ namespace Oikos.Data {
         [SerializeField] private GameObject objectPrefab;
         
         [Header("Translation references")]
-        [SerializeField] private string nameTranslationIdentifierString;
-        [SerializeField] private string descriptionTranslationIdentifierString;
-        [SerializeField] private string worldDamageDescriptionTranslationIdentifierString;
-
+        [SerializeField] private LocalizedString nameTranslationIdentifierString;
+        [SerializeField] private LocalizedString descriptionTranslationIdentifierString;
+        [SerializeField] private LocalizedString worldDamageDescriptionTranslationIdentifierString;
+        
         #endregion
         
     }
