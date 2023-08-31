@@ -2,6 +2,9 @@
 
 namespace Oikos.Core {
     
+    /// <summary>
+    /// Contains utility methods to facilitate repetitive calculations
+    /// </summary>
     public static class Utils {
         
         /// <summary>

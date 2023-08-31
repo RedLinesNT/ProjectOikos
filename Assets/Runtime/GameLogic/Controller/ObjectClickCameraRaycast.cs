@@ -6,17 +6,23 @@ using Logger = Oikos.Core.Logger;
 
 namespace Oikos.GameLogic.Controller {
 
+    /// <summary>
+    /// Allows you to click on objects (GameObjects) with the mouse cursor.
+    /// </summary>
+    /// <description>
+    /// You can specify the layers of objects that can be clicked in the editor or directly by script.
+    /// </description>
     public class ObjectClickCameraRaycast : MonoBehaviour {
 
         #region Attributes
 
         [Header("References")]
-        [SerializeField] private ACameraEntity cameraController = null;
-        [SerializeField] private LayerMask maskHit = default;
+        [SerializeField, Tooltip("The Camera Controller")] private ACameraEntity cameraController = null;
+        [SerializeField, Tooltip("The layers of objects that can be clicked on.")] private LayerMask maskHit = default;
         
         [Header("Events")]
-        [SerializeField] private UnityEvent<GameObject> onValidObjectHitEvent = null;
-        [SerializeField] private UnityEvent<GameObject> onInvalidObjectHitEvent = null;
+        [SerializeField, Tooltip("The event is triggered when a valid object has been clicked/hit on.")] private UnityEvent<GameObject> onValidObjectHitEvent = null;
+        [SerializeField, Tooltip("The event is triggered when a invalid object has been clicked/hit on.")] private UnityEvent<GameObject> onInvalidObjectHitEvent = null;
         
         #endregion
 

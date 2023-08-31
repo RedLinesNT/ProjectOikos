@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using Oikos.Core;
 using UnityEngine;
 using Logger = Oikos.Core.Logger;
 
 namespace Oikos.GameLogic.Controller {
 
+    /// <summary>
+    /// Control an orbital camera with the mouse
+    /// </summary>
     public class OrbitalCameraController : ACameraEntity {
 
         #region Attributes
