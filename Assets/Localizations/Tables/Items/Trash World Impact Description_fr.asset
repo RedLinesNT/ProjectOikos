@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Trash World Impact Description_fr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: 5d157d8eb8e75a447865716db6f70c5c, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 62645043200
+    m_Localized: "certains animaux peuvent se coincer dans les bouteilles, sans pouvoir
+      s\u2019en extraire. Et lorsqu\u2019il se brise, le verre peut blesser des animaux
+      qui peuvent s\u2019y empaler et mourir ou se blesser gri\xE8vement."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 917846851584
+    m_Localized: "certains animaux peuvent se coincer dans les bouteilles, sans pouvoir
+      s\u2019en extraire. Et lorsqu\u2019il se brise, le verre peut blesser des animaux
+      qui peuvent s\u2019y empaler et mourir ou se blesser gri\xE8vement."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1050151976960
+    m_Localized: "diverses substances chimiques sont utilis\xE9es tout au long de
+      la fabrication du papier."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1140480507904
+    m_Localized: "diverses substances chimiques sont utilis\xE9es tout au long de
+      la fabrication du papier."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1252485201920
+    m_Localized: "de nombreux oiseaux, mammif\xE8res et poissons sont retrouv\xE9s
+      morts \xE0 cause d\u2019une ingestion de mati\xE8res en plastique qui contaminent
+      leur m\xE9tabolisme.Le plastique n\u2019est quasiment pas biod\xE9gradable."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1400493801472
+    m_Localized: "de nombreux oiseaux, mammif\xE8res et poissons sont retrouv\xE9s
+      morts \xE0 cause d\u2019une ingestion de mati\xE8res en plastique qui contaminent
+      leur m\xE9tabolisme.Le plastique n\u2019est quasiment pas biod\xE9gradable."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1452738052096
+    m_Localized: "on estime que les pertes et les d\xE9chets alimentaires g\xE9n\xE8rent
+      8 \xE0 10 % des \xE9missions mondiales de gaz \xE0 effet de serre."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1587391987712
+    m_Localized: "on estime que les pertes et les d\xE9chets alimentaires g\xE9n\xE8rent
+      8 \xE0 10 % des \xE9missions mondiales de gaz \xE0 effet de serre."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1708859031552
+    m_Localized: "1 kg de CO2 \xE9mis, risque de pluie acide."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1768653029376
+    m_Localized: "certaines piles lib\xE8rent alors leurs m\xE9taux et polluent les
+      \xE9cosyst\xE8mes \xE0 long terme. le mercure d'une pile bouton usag\xE9e peut
+      contaminer 400 litres d'eau ou un m\xE8tre cube de terre."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
