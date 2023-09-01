@@ -14,7 +14,7 @@ namespace Oikos.Editor {
         /// <summary>
         /// Create a TrashObjectData (ScriptableObject) file
         /// </summary>
-        [MenuItem("Oikos/Gameplay/Trash Object file")] public static void CreateTrashObjectFile() {
+        [MenuItem("Oikos/Gameplay/Create new Trash Object file...")] public static void CreateTrashObjectFile() {
             TrashObjectData _asset = ScriptableObject.CreateInstance<TrashObjectData>();
             
             if(!Directory.Exists("Assets/Resources/Gameplay/Trash Objects/")) { //Check if the directory exists
@@ -33,7 +33,7 @@ namespace Oikos.Editor {
         /// <summary>
         /// Create a SceneGameplayData (ScriptableObject) file
         /// </summary>
-        [MenuItem("Oikos/Gameplay/Scene Gameplay file")] public static void CreateSceneGameplayFile() {
+        [MenuItem("Oikos/Gameplay/Create new Scene Gameplay file...")] public static void CreateSceneGameplayFile() {
             SceneGameplayData _asset = ScriptableObject.CreateInstance<SceneGameplayData>();
             
             if(!Directory.Exists("Assets/Resources/Scene Data/")) { //Check if the directory exists
