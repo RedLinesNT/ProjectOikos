@@ -22,6 +22,10 @@ namespace Oikos.Data {
         [SerializeField, Tooltip("The trash's lifespan (Localized string).")] private LocalizedString trashLifespanLocalizedString = null;
         [SerializeField, Tooltip("The trash's world impact description (Localized string).")] private LocalizedString worldImpactDescriptionLocalizedString = null;
         
+        [Header("Trash Item Physics settings")]
+        [SerializeField, Tooltip("Enable the item's rigidbody. This will work only if a Rigidbody Component can be found.")] private bool enableRigidbody = false;
+        [SerializeField, Tooltip("Set physics constraints of this trash item's rigidbody.\nEnableRigidbody must be set to true.")] private RigidbodyConstraints rigidbodyConstraints = RigidbodyConstraints.None;
+        
         #endregion
 
         #region Properties
