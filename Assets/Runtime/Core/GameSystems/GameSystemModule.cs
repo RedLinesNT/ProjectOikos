@@ -14,6 +14,7 @@ namespace Oikos.Core.Systems {
 
         #endregion
         
+        
         /// <summary>
         /// Return a GameSystem from the type asked.
         /// </summary>

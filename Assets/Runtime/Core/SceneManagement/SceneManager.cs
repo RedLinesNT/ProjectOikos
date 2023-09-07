@@ -30,8 +30,22 @@ namespace Oikos.Core.SceneManagement {
         
         #endregion
 
+        #region Events
+
+        /// <summary>
+        /// This event is triggered when a scene has been loaded
+        /// </summary>
+        private static Action<SceneGameplayData> onSceneLoaded;
+
+        #endregion
+        
         #region Properties
 
+        /// <summary>
+        /// Triggered when a scene has been loaded
+        /// </summary>
+        public static event Action<SceneGameplayData> OnSceneLoaded { add { onSceneLoaded += value; } remove { onSceneLoaded -= value; } }
+        
         /// <summary>
         /// The active Gameplay Scene.
         /// This value might be null if the current scene loaded doesn't have a SceneGameplayData file made.
@@ -58,20 +72,12 @@ namespace Oikos.Core.SceneManagement {
                 return;
             }
             
+            UnityEngine.SceneManagement.SceneManager.sceneLoaded += (_scene, _loadMode) => {
+                ActiveScene = FindSceneGameplayDataFromPath(_scene.path);
+                onSceneLoaded?.Invoke(ActiveScene);
+            }; 
+            
             IsInitialized = true;
-        }
-
-        /// <summary>
-        /// The method is only used for the first scene loaded. Used to still load the required content.
-        /// Useful in the editor.
-        /// </summary>
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)] private static void PreloadFirstSceneContent() {
-            ActiveScene = FindSceneGameplayDataFromPath(UnityEngine.SceneManagement.SceneManager.GetActiveScene().path); //Try to get the config file from the current scene laoded
-            if(ActiveScene != null) { //Load the gameplay context if the Scene config file has been found
-                LoadSceneGameplayContext(ActiveScene);
-            } else {
-                Logger.Trace("Scene Manager", $"The scene used at the game launch don't have any SceneGameplayData linked! (Scene: {UnityEngine.SceneManagement.SceneManager.GetActiveScene().name})");
-            }
         }
         
         /// <summary>
