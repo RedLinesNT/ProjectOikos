@@ -1,5 +1,6 @@
 using System;
 using Oikos.Core;
+using Oikos.GameLogic.Interactable;
 using UnityEngine;
 using UnityEngine.Events;
 using Logger = Oikos.Core.Logger;
@@ -37,6 +38,11 @@ namespace Oikos.GameLogic.Controller {
         /// The RaycastHit to click on objects
         /// </summary>
         private RaycastHit rayHit = default;
+        
+        /// <summary>
+        /// The current APointerClickableObject hovered
+        /// </summary>
+        private APointerClickableObject currentPointerClickableObject = null;
         
         #endregion
 
@@ -80,7 +86,8 @@ namespace Oikos.GameLogic.Controller {
         }
 
         private void Update() {
-            if(Input.GetMouseButtonDown(0)) ShootRaycast();
+            ShootRaycast();
+            if(Input.GetMouseButtonDown(0)) currentPointerClickableObject?.OnPointerClickInternal();
         }
 
         #endregion
@@ -91,15 +98,30 @@ namespace Oikos.GameLogic.Controller {
         /// Shoot a raycast from the Camera to the Mouse position in world Coordinates
         /// </summary>
         private void ShootRaycast() {
-            ray = new Ray(cameraController.CameraComponent.ScreenToWorldPoint(Input.mousePosition), cameraController.CameraComponent.gameObject.transform.forward); //Create the ray
+            ray = cameraController.CameraComponent.ScreenPointToRay(Input.mousePosition); //Create the ray
             
-            if(Physics.Raycast(ray, out rayHit, 1000f)) { //If the Raycast hit something
+            if(Physics.Raycast(ray, out rayHit, 500f)) { //If the Raycast hit something
                 if(((1<<rayHit.transform.gameObject.layer) & maskHit) != 0) { //The object hit has the correct layer
                     onValidObjectHit?.Invoke(rayHit.transform.gameObject); //Trigger the Action event
                     onValidObjectHitEvent?.Invoke(rayHit.transform.gameObject); //Trigger the Unity Event
-                } else { //The object hit has the wrong layer
+                    
+                    //TODO: Change this logic stuff.
+                    //Peak dog-shit code (YandereDev-tier...)
+                    if(currentPointerClickableObject != rayHit.transform.GetComponent<APointerClickableObject>()) {
+                        currentPointerClickableObject?.OnPointerExitInternal(); //Trigger the exit event
+                        
+                        currentPointerClickableObject = rayHit.transform.GetComponent<APointerClickableObject>(); //Set the new value
+                        
+                        currentPointerClickableObject?.OnPointerEnterInternal(); //Trigger the enter event
+                    }
+                    
+                    
+                } else { //The object hit has the wrong layer 
                     onInvalidObjectHit?.Invoke(rayHit.transform.gameObject); //Trigger the Action event
                     onInvalidObjectHitEvent?.Invoke(rayHit.transform.gameObject); //Trigger the Unity Event
+                    
+                    currentPointerClickableObject?.OnPointerExitInternal(); //Trigger the exit event
+                    currentPointerClickableObject = null;
                 }
             }
         }

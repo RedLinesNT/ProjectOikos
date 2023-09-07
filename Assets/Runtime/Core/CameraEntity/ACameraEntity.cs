@@ -13,7 +13,7 @@ namespace Oikos.Core {
     /// <inEditor>
     /// You can setup the references of this instance via the Engine's editor GUI
     /// </inEditor>
-    [Serializable] public abstract class ACameraEntity : MonoBehaviour {
+    public abstract class ACameraEntity : MonoBehaviour {
 
         #region Attributes
 

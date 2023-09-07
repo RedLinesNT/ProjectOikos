@@ -1,3 +1,4 @@
+using Oikos.GameLogic.Interactable;
 using Oikos.Types;
 using UnityEngine;
 using UnityEngine.Localization;
@@ -15,7 +16,7 @@ namespace Oikos.Data {
         [SerializeField, Tooltip("The identifier of this trash object.")] private E_TRASH_OBJECT_TYPE identifier = E_TRASH_OBJECT_TYPE.PLACEHOLDER;
         [SerializeField, Tooltip("The identifier of the target trash bin of this object.")] private E_TRASHBIN_IDENTIFIER trashBinIdentifier = E_TRASHBIN_IDENTIFIER.PLACEHOLDER;
         [SerializeField, Tooltip("The sprite icon of this trash object.")] private Sprite trashIconSprite = null;
-        [SerializeField, Tooltip("The Prefab of this trash object.")] private GameObject[] trashModelPrefabs = null;
+        [SerializeField, Tooltip("The Prefab of this trash object.")] private InteractableTrashobject[] trashModelPrefabs = null;
         
         [Header("Translation references")]
         [SerializeField, Tooltip("The trash's name (Localized string).")] private LocalizedString trashNameLocalizedString = null;
@@ -24,7 +25,7 @@ namespace Oikos.Data {
         [SerializeField, Tooltip("The trash's world impact description (Localized string).")] private LocalizedString worldImpactDescriptionLocalizedString = null;
         
         [Header("Trash Item Physics settings")]
-        [SerializeField, Tooltip("Enable the item's rigidbody. This will work only if a Rigidbody Component can be found.")] private bool enableRigidbody = false;
+        [SerializeField, Tooltip("Enable the item's rigidbody. This will work only if a Rigidbody Component can be found.")] private bool enableRigidbody = true;
         [SerializeField, Tooltip("Set physics constraints of this trash item's rigidbody.\nEnableRigidbody must be set to true.")] private RigidbodyConstraints rigidbodyConstraints = RigidbodyConstraints.None;
         
         #endregion
@@ -51,7 +52,7 @@ namespace Oikos.Data {
         /// <summary>
         /// The model prefab of this trash object.
         /// </summary>
-        public GameObject[] ModelPrefab { get { return trashModelPrefabs; } }
+        public InteractableTrashobject[] ModelPrefabs { get { return trashModelPrefabs; } }
         
         /// <summary>
         /// The name of this trash object (This string is already translated in the correct language).
@@ -70,6 +71,17 @@ namespace Oikos.Data {
         /// </summary>
         public string WorldImpactDescriptionLocalizedString { get { return worldImpactDescriptionLocalizedString.GetLocalizedString(); } }
         
+        /// <summary>
+        /// Enable the item's rigidbody.
+        /// This will work only if a Rigidbody Component can be found.
+        /// </summary>
+        public bool EnableRigidbody { get { return enableRigidbody; } }
+        /// <summary>
+        /// The Rigidbody's physics constraints.
+        /// EnableRigidbody must be set to true in order to be taken in account.
+        /// </summary>
+        public RigidbodyConstraints RigidbodyConstraints { get { return rigidbodyConstraints; } }
+        
         #endregion
 
         #region TrashobjectData's methods
@@ -77,7 +89,7 @@ namespace Oikos.Data {
         /// <summary>
         /// Will pick a random object prefabs among the list of given one.
         /// </summary>
-        public GameObject PickRandomPrefab() {
+        public InteractableTrashobject PickRandomPrefab() {
             Random _random = new Random();
             return trashModelPrefabs[_random.Next(0, trashModelPrefabs.Length)];
         }

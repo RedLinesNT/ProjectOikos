@@ -1,4 +1,5 @@
-﻿using Oikos.Data;
+﻿using Oikos.Core.Systems;
+using Oikos.Data;
 using Oikos.Types;
 using UnityEngine;
 
@@ -20,6 +21,9 @@ namespace Oikos.Core.SceneManagement {
         [Header("Scene gameplay references")]
         [SerializeField, Tooltip("The list of every trash objects to spawn at the launch of this scene.")] private TrashObjectData[] trashObjects = null;
         [SerializeField, Tooltip("In the case where there's more trash objects specified than spawn points available for them, if set to true, the spawn points will be reused to spawn the remaining trash objects to spawn.")] private bool allowSpawnReuse = false;
+        
+        [Header("Scene GameSystems")]
+        [SerializeField, Tooltip("The GameSystem definition of this scene")] private SceneGameSystemDefinition gameSysDefinition = null;
         
         #endregion
 
@@ -47,6 +51,11 @@ namespace Oikos.Core.SceneManagement {
         /// if set to true, the spawn points will be reused to spawn the remaining trash objects to spawn.
         /// </summary>
         public bool AllowTrashObjectSpawnsReuse { get { return allowSpawnReuse; } }
+        
+        /// <summary>
+        /// The GameSystemDefinition of this scene
+        /// </summary>
+        public SceneGameSystemDefinition GameSystemDefinition { get { return gameSysDefinition; } }
         
         #endregion
         

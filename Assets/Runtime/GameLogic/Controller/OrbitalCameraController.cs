@@ -81,6 +81,9 @@ namespace Oikos.GameLogic.Controller {
             CameraName = "Orbital Camera Controller";
             CameraType = E_CAMERA_ENTITY_TYPE.CONTROLLER;
             
+            //Set the Camera default position
+            transform.position = Target;
+            
             //Set the default zoom value
             Zoom = maxZoom - minZoom;
         }
