@@ -1,11 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using Oikos.Data;
-using Oikos.GameLogic.Props.Spawners;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 namespace Oikos.Core.SceneManagement {
     
@@ -23,11 +18,6 @@ namespace Oikos.Core.SceneManagement {
         /// </summary>
         private static SceneGameplayData[] sceneDatas = null;
 
-        /// <summary>
-        /// Array of every trash objects spawn points
-        /// </summary>
-        private static TrashObjectSpawnerPoint[] trashSpawnerPoints = null;
-        
         #endregion
 
         #region Events
@@ -53,10 +43,11 @@ namespace Oikos.Core.SceneManagement {
         public static SceneGameplayData ActiveScene { get; private set; } = null;
         
         /// <summary>
-        /// The list of loaded Trash Objects on the current scene
+        /// The previous active Gameplay Scene.
+        /// This value might be null if the previous scene loaded didn't had a SceneGameplayData file made.
         /// </summary>
-        public static List<TrashObjectData> SpawnedTrashObjects { get; private set; } = new List<TrashObjectData>();
-
+        public static SceneGameplayData PreviousActiveScene { get; private set; } = null;
+        
         #endregion
 
         #region SceneManager's loading methods
@@ -73,66 +64,12 @@ namespace Oikos.Core.SceneManagement {
             }
             
             UnityEngine.SceneManagement.SceneManager.sceneLoaded += (_scene, _loadMode) => {
+                PreviousActiveScene = ActiveScene;
                 ActiveScene = FindSceneGameplayDataFromPath(_scene.path);
                 onSceneLoaded?.Invoke(ActiveScene);
             }; 
             
             IsInitialized = true;
-        }
-        
-        /// <summary>
-        /// Load the gameplay elements of a scene.
-        /// </summary>
-        private static void LoadSceneGameplayContext(SceneGameplayData _sceneGameplay, Action _onActionFinished = null) {
-            if(!IsInitialized) return; //Don't execute anything if not allowed to do so
-
-            Logger.Trace("Scene Manager", "Loading gameplay context...");
-            
-            trashSpawnerPoints = Object.FindObjectsOfType<TrashObjectSpawnerPoint>(); //Get every spawner points
-            
-            //If there's no Trash Object Spawn Point found, don't execute anything
-            if(trashSpawnerPoints == null) {
-                Logger.Trace("Scene Manager", $"Gameplay context related content couldn't be loaded! (No TrashObjectSpawnPoint found in the active scene!)");
-                _onActionFinished?.Invoke(); //Trigger the finished event
-                return;
-            }
-            
-            //If there's no Trash Objects to spawn, don't execute anything
-            if(_sceneGameplay.TrashObjects == null) {
-                Logger.Trace("Scene Manager", $"Gameplay context related content couldn't be loaded! (No TrashObjectData files referenced in the active scene's SceneGameplayData file!)");
-                _onActionFinished?.Invoke(); //Trigger the finished event
-                return;
-            }
-            
-            List<TrashObjectData> _sceneObjects = new List<TrashObjectData>(); //Create a new list of TrashObjectData to copy the data from the SceneGameplayData file
-            
-            for(int i=0; i<_sceneGameplay.TrashObjects.Length; i++) { //Populate the new TrashObjectData list
-                _sceneObjects.Insert(i, _sceneGameplay.TrashObjects[i]); //Insert this new element
-            }
-            
-            for(int i=0; i<trashSpawnerPoints.Length; i++) {
-                bool _instantiateResult = trashSpawnerPoints[i].InstantiateTrashobject(_sceneObjects.First()); //Spawn the trash object (With the first element of this list)
-                if(_instantiateResult) { //If this element was correctly spawned, remove this element
-                    SpawnedTrashObjects.Add(_sceneObjects.First()); //Add this object to the loaded objects
-                    _sceneObjects.Remove(_sceneObjects.First());
-                }
-            }
-            
-            //If there's trash objects list to spawn, and this scene is allowed to reuse spawn points
-            if(_sceneObjects.Count > 0 && _sceneGameplay.AllowTrashObjectSpawnsReuse) {
-                for(int i=0; i<trashSpawnerPoints.Length; i++) { //Re-execute the same action, but with the override flag on the spawn point
-                    bool _instantiateResult = trashSpawnerPoints[i].InstantiateTrashobject(_sceneObjects.First(), true); //Spawn the trash object (With the first element of this list)
-                    if(_instantiateResult) { //If this element was correctly spawned, remove this element
-                        SpawnedTrashObjects.Add(_sceneObjects.First()); //Add this object to the loaded objects
-                        _sceneObjects.Remove(_sceneObjects.First());
-                    }
-                }
-            }
-            
-            Logger.Trace("Scene Manager", $"Gameplay context related content loaded. ('{_sceneObjects.Count}' Trash Objects didn't spawned)");
-            
-            //Trigger the finished event
-            _onActionFinished?.Invoke();
         }
 
         #endregion

@@ -81,7 +81,7 @@ namespace Oikos.Core {
         private void LateUpdate() => OnLateUpdateEntity();
 
         #endregion
-        
+
         #region ACameraEntity's virtual methods
 
         /// <summary>

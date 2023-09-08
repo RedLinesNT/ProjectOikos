@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Oikos.GameLogic.Systems;
+using UnityEngine;
 
 namespace Oikos.Core.Systems {
     
@@ -15,17 +17,7 @@ namespace Oikos.Core.Systems {
         #endregion
         
         
-        /// <summary>
-        /// Return a GameSystem from the type asked.
-        /// </summary>
-        /// <param name="_gameSysType">The GameSystem type asked</param>
-        private static AGameSystem FindGameSystemFromType(E_GAME_SYSTEM_TYPE _gameSysType) {
-            Dictionary<E_GAME_SYSTEM_TYPE, AGameSystem> _gameSystemList = new Dictionary<E_GAME_SYSTEM_TYPE, AGameSystem>() {
-                { E_GAME_SYSTEM_TYPE.TRASH_OBJECT_SPAWNER, null }, //Trash Spawner System
-            };
-            
-            return _gameSystemList[_gameSysType];
-        }
+        
         
     }
     

@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: leaves
-    second: {fileID: 2100000, guid: fa6aae75b0f5d424cb0eb911b16380a9, type: 2}
+    second: {fileID: 2100000, guid: 07a39b5169f1ec643864702e3b17b89c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: tronc
-    second: {fileID: 2100000, guid: a2efabc4f5295ae40a224ce8a178856d, type: 2}
+    second: {fileID: 2100000, guid: fff14bd789537594cbe262c25a6b7840, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

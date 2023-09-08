@@ -125,6 +125,10 @@ namespace Oikos.GameLogic.Controller {
                 }
             }
         }
+        
+        private void EventReceiver(GameObject _eventParam) {
+            
+        }
 
         #endregion
         
