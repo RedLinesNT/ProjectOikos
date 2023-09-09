@@ -15,6 +15,7 @@ MonoBehaviour:
   internalItemName: Light bulb
   identifier: 9
   trashBinIdentifier: 5
+  spriteIcon: {fileID: 21300000, guid: ca31c8c8f97780b44af4ea006a305aca, type: 3}
   trashModelPrefabs:
   - {fileID: 5109788970157700650, guid: e7cad10f3aa42cf4b94d66324319b9bd, type: 3}
   trashNameLocalizedString:

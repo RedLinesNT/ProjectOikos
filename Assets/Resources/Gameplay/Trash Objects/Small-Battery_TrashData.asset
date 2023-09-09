@@ -15,6 +15,7 @@ MonoBehaviour:
   internalItemName: Battery
   identifier: 10
   trashBinIdentifier: 5
+  spriteIcon: {fileID: 21300000, guid: ca31c8c8f97780b44af4ea006a305aca, type: 3}
   trashModelPrefabs:
   - {fileID: 7255404503730888419, guid: a9d27f4ee8a117340a14933ee884a68a, type: 3}
   trashNameLocalizedString:

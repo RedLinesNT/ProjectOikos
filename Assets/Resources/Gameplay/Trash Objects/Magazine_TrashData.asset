@@ -15,6 +15,7 @@ MonoBehaviour:
   internalItemName: Magazines (Open/Closed)
   identifier: 4
   trashBinIdentifier: 2
+  spriteIcon: {fileID: 21300000, guid: ca31c8c8f97780b44af4ea006a305aca, type: 3}
   trashModelPrefabs:
   - {fileID: 4169019123985618193, guid: 12dbd90a366593447b4cc8f754a365f8, type: 3}
   - {fileID: 1931062883125677467, guid: c29b09053d6d29e46ba48c3527b40574, type: 3}

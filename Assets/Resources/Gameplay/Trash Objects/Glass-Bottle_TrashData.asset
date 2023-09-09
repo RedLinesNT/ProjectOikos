@@ -15,6 +15,7 @@ MonoBehaviour:
   internalItemName: Glass Bottle
   identifier: 1
   trashBinIdentifier: 1
+  spriteIcon: {fileID: 21300000, guid: ca31c8c8f97780b44af4ea006a305aca, type: 3}
   trashModelPrefabs:
   - {fileID: 2696910839166991863, guid: cce80ec16ab4fd1499a4edba76e4af92, type: 3}
   trashNameLocalizedString:

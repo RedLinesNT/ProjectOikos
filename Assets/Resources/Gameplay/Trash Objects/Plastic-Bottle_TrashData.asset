@@ -15,6 +15,7 @@ MonoBehaviour:
   internalItemName: Plastic Bottle
   identifier: 2
   trashBinIdentifier: 3
+  spriteIcon: {fileID: 21300000, guid: ca31c8c8f97780b44af4ea006a305aca, type: 3}
   trashModelPrefabs:
   - {fileID: 4303027842014076344, guid: 118ccc47f638dd249a5b633e6c41d2e0, type: 3}
   trashNameLocalizedString:

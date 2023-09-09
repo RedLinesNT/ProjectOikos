@@ -15,6 +15,7 @@ MonoBehaviour:
   internalItemName: Parfum
   identifier: 3
   trashBinIdentifier: 1
+  spriteIcon: {fileID: 21300000, guid: ca31c8c8f97780b44af4ea006a305aca, type: 3}
   trashModelPrefabs:
   - {fileID: 527379896337644408, guid: a0de20cbaf998d74caf754856bcc2916, type: 3}
   - {fileID: 5507070795833618864, guid: 2f3adbdbce6117941a9fad330a52d4da, type: 3}

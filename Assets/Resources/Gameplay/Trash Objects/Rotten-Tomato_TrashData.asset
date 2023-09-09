@@ -15,6 +15,7 @@ MonoBehaviour:
   internalItemName: Rotten Tomato
   identifier: 8
   trashBinIdentifier: 4
+  spriteIcon: {fileID: 21300000, guid: ca31c8c8f97780b44af4ea006a305aca, type: 3}
   trashModelPrefabs:
   - {fileID: 650255584995769736, guid: dcfcbd1ad0aa1a343bb9b9901a813900, type: 3}
   trashNameLocalizedString:
