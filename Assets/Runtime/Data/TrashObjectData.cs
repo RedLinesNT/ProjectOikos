@@ -15,6 +15,7 @@ namespace Oikos.Data {
         [Header("Trash Item Definition")]
         [SerializeField, Tooltip("The identifier of this trash object.")] private E_TRASH_OBJECT_TYPE identifier = E_TRASH_OBJECT_TYPE.UNKNOWN;
         [SerializeField, Tooltip("The identifier of the target trash bin of this object.")] private E_TRASHBIN_IDENTIFIER trashBinIdentifier = E_TRASHBIN_IDENTIFIER.UNKNOWN;
+        [SerializeField, Tooltip("The icon used to show the item into the UI.")] private Sprite spriteIcon = null;
         [SerializeField, Tooltip("The Prefab of this trash object.")] private InteractableTrashobject[] trashModelPrefabs = null;
         
         [Header("Translation references")]
@@ -44,6 +45,11 @@ namespace Oikos.Data {
         /// The identifier of the target trash bin of this item. Defined by the "E_TRASHBIN_IDENTIFIER" Enum.
         /// </summary>
         public E_TRASHBIN_IDENTIFIER TrashbinIdentifier { get { return trashBinIdentifier; } }
+        /// <summary>
+        /// The icon of this trash object.
+        /// Can be used to display it into the UI for example.
+        /// </summary>
+        public Sprite TrashIcon { get { return spriteIcon; } }
         /// <summary>
         /// The model prefab of this trash object.
         /// </summary>
