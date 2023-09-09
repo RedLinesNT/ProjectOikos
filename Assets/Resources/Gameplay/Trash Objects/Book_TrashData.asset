@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Book_TrashData
   m_EditorClassIdentifier: 
   internalItemName: Book
-  identifier: 4
+  identifier: 5
   trashBinIdentifier: 2
   trashModelPrefabs:
   - {fileID: 92723601093937170, guid: b6198a566606bf541b6b43b7861d793e, type: 3}

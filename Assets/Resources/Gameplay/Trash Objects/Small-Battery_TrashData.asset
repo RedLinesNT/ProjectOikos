@@ -12,42 +12,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b05388c9cfc4e4ca17afdfd3c1a83a, type: 3}
   m_Name: Small-Battery_TrashData
   m_EditorClassIdentifier: 
-  internalItemName: 
-  identifier: 0
-  trashBinIdentifier: 0
-  trashModelPrefabs: []
+  internalItemName: Battery
+  identifier: 10
+  trashBinIdentifier: 5
+  trashModelPrefabs:
+  - {fileID: 7255404503730888419, guid: a9d27f4ee8a117340a14933ee884a68a, type: 3}
   trashNameLocalizedString:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:41702b9cbe6f8ec4b89c357b42b17f3a
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1432622170112
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   trashTypeLocalizedString:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:a20f74294c8537d4ab92f0dc9a9b1552
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 209189830656
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   trashLifespanLocalizedString:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:f5b1a8e018ea5a142918be475aefb952
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 613654953984
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   worldImpactDescriptionLocalizedString:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:5d157d8eb8e75a447865716db6f70c5c
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 1768653029376
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0

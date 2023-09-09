@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Parfum_TrashData
   m_EditorClassIdentifier: 
   internalItemName: Parfum
-  identifier: 2
+  identifier: 3
   trashBinIdentifier: 1
   trashModelPrefabs:
   - {fileID: 527379896337644408, guid: a0de20cbaf998d74caf754856bcc2916, type: 3}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Magazine_TrashData
   m_EditorClassIdentifier: 
   internalItemName: Magazines (Open/Closed)
-  identifier: 3
+  identifier: 4
   trashBinIdentifier: 2
   trashModelPrefabs:
   - {fileID: 4169019123985618193, guid: 12dbd90a366593447b4cc8f754a365f8, type: 3}
