@@ -111,7 +111,7 @@ namespace Oikos.GameLogic.Systems {
             }
             
             
-            Logger.Trace("TrashObjectManager System", $"Gameplay context related content loaded. ('{_sceneObjects.Count}' Trash Objects didn't spawned)");
+            Logger.Trace("TrashObjectManager System", $"Gameplay context related content loaded.");
         }
 
         /// <summary>
