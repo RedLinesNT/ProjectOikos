@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2905521108224698623}
   - component: {fileID: 92723601093937170}
   - component: {fileID: 8784206413637738869}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trash_Book_Interactable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 569593818275533477}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Models
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,9 +164,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -595517376862147799, guid: 4ea3b4774d021c14294414239e03725e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4ea3b4774d021c14294414239e03725e, type: 3}
       propertyPath: m_Name
       value: livre_V2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4ea3b4774d021c14294414239e03725e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921752022960168637, guid: 4ea3b4774d021c14294414239e03725e, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

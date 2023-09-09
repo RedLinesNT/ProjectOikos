@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2578631905483386770}
   - component: {fileID: 7589127916854782591}
   - component: {fileID: 527379896337644408}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trash_Parfum_Interactable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6283985006147126702}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Models
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,6 +124,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6283985006147126702}
     m_Modifications:
+    - target: {fileID: -9062666433998918377, guid: 79cf78bf4293bdb4c9edaa4b1d0267eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8781924699693684385, guid: 79cf78bf4293bdb4c9edaa4b1d0267eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 79cf78bf4293bdb4c9edaa4b1d0267eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -167,6 +175,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 79cf78bf4293bdb4c9edaa4b1d0267eb, type: 3}
       propertyPath: m_Name
       value: parfum_V2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 79cf78bf4293bdb4c9edaa4b1d0267eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

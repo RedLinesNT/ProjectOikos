@@ -114,8 +114,6 @@ namespace Oikos.GameLogic.Controller {
                         
                         currentPointerClickableObject?.OnPointerEnterInternal(); //Trigger the enter event
                     }
-                    
-                    
                 } else { //The object hit has the wrong layer 
                     onInvalidObjectHit?.Invoke(rayHit.transform.gameObject); //Trigger the Action event
                     onInvalidObjectHitEvent?.Invoke(rayHit.transform.gameObject); //Trigger the Unity Event

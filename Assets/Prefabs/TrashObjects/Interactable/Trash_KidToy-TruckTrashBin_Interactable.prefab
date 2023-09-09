@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1123637532813374599}
   - component: {fileID: 472251053012820641}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GlobalCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3784118764941381507}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 894713169248936704}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Models
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 6927564370994814395}
   - component: {fileID: 6801122343475606872}
   - component: {fileID: 7522139528603108468}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trash_KidToy-TruckTrashBin_Interactable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,6 +253,18 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ae5ff28de18d774479a727516549428f, type: 3}
       propertyPath: m_Name
       value: camion_a_benne_complet_V2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ae5ff28de18d774479a727516549428f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974921252309592012, guid: ae5ff28de18d774479a727516549428f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7821586022373780524, guid: ae5ff28de18d774479a727516549428f, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

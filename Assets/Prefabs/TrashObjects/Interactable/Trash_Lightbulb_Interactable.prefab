@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6409020557493462508}
   - component: {fileID: 180279912960360225}
   - component: {fileID: 5109788970157700650}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trash_Lightbulb_Interactable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3208822948483826054}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Models
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,6 +124,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3208822948483826054}
     m_Modifications:
+    - target: {fileID: -9125830829731327562, guid: 954f9609b2e502145897abcd47ed1050, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 954f9609b2e502145897abcd47ed1050, type: 3}
       propertyPath: m_LocalScale.x
       value: 3
@@ -183,6 +187,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 954f9609b2e502145897abcd47ed1050, type: 3}
       propertyPath: m_Name
       value: ampoule_V2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 954f9609b2e502145897abcd47ed1050, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488094254345431643, guid: 954f9609b2e502145897abcd47ed1050, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

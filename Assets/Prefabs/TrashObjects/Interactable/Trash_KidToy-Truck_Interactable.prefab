@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5660758314988028247}
   - component: {fileID: 3110570846819963928}
   - component: {fileID: 4514144523559660278}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trash_KidToy-Truck_Interactable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5284558400120574341}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Models
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 652224927945864741}
   - component: {fileID: 1438185664242627963}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GlobalCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4708472421953713369}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,8 +255,16 @@ PrefabInstance:
       value: camion_V2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1c59a06cd70c313448efc78370901459, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1c59a06cd70c313448efc78370901459, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974921252309592012, guid: 1c59a06cd70c313448efc78370901459, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

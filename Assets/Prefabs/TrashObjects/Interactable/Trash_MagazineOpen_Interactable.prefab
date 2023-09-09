@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3324096667566575197}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Models
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 3040018713044683575}
   - component: {fileID: 8959821980995882574}
   - component: {fileID: 1931062883125677467}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trash_MagazineOpen_Interactable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,9 +164,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3006324364670909071, guid: 89784e35c14002945a229fea59cb5a17, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 89784e35c14002945a229fea59cb5a17, type: 3}
       propertyPath: m_Name
       value: magazine_ouvert_V2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 89784e35c14002945a229fea59cb5a17, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

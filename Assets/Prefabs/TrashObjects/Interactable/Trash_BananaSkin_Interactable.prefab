@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 351677092821467408}
   - component: {fileID: 3831368359006567759}
   - component: {fileID: 2086721891891590270}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trash_BananaSkin_Interactable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8555434597968574358}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Models
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,6 +167,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f078b60e4096ddc4ebf56fec03c6bd5d, type: 3}
       propertyPath: m_Name
       value: peau_de_banane_V2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f078b60e4096ddc4ebf56fec03c6bd5d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702959088501715216, guid: f078b60e4096ddc4ebf56fec03c6bd5d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

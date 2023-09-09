@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1255682191334672541}
   - component: {fileID: 8413716424387321168}
   - component: {fileID: 4303027842014076344}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trash_PlasticBottle_Interactable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6753117990281539641}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Models
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,6 +167,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c7525b453539fcb4b8fc049ee3bb9700, type: 3}
       propertyPath: m_Name
       value: bouteille_en_plastique_V2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c7525b453539fcb4b8fc049ee3bb9700, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2206667425812305271, guid: c7525b453539fcb4b8fc049ee3bb9700, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

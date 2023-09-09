@@ -86,6 +86,7 @@ namespace Oikos.GameLogic.Systems {
                     for(int y=0; y<_sceneObjects.Count; y++) { //Find if the Scene trash objects definition contain the wanted item
                         if(_sceneObjectsSpawnPoints[i].WantedObject == _sceneObjects[y].Identifier) { //If the object's type is the one asked, Instantiate it
                             InteractableTrashobject _newTrashObjectConstraint = _sceneObjectsSpawnPoints[i].InstantiateTrashObject(_sceneObjects[y]);
+                            _newTrashObjectConstraint.IsInteractable = true;
                             _newTrashObjectConstraint.OnPointerClickEvent += () => { OnTrashObjectPickedUp(_newTrashObjectConstraint); }; //Bind the event
                             
                             //Remove this spawn point and item from the lists
@@ -100,6 +101,7 @@ namespace Oikos.GameLogic.Systems {
                 } else {
                     //Just spawn the next item on this spawn point
                     InteractableTrashobject _newTrashObject = _sceneObjectsSpawnPoints[i].InstantiateTrashObject(_sceneObjects.First());
+                    _newTrashObject.IsInteractable = true;
                     _newTrashObject.OnPointerClickEvent += () => { OnTrashObjectPickedUp(_newTrashObject); };
                 
                     //Remove this spawn point and item from the lists

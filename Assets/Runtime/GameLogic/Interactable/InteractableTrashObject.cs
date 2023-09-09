@@ -20,7 +20,9 @@ namespace Oikos.GameLogic.Interactable {
         public Rigidbody RigidbodyComponent { get { return rigidbodyComponent; } }
 
         #endregion
-        
+
+        #region APointerClickableObject's virtual methods
+
         private protected override void OnPointerClick() {
             //TODO: Implement code logic here?
         }
@@ -32,6 +34,9 @@ namespace Oikos.GameLogic.Interactable {
         private protected override void OnPointerExit() {
             //TODO: Implement code logic here?
         }
+
+        #endregion
+
     }
     
 }
