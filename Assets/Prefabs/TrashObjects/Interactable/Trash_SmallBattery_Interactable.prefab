@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5190647680940370453}
   - component: {fileID: 7255404503730888419}
   m_Layer: 0
-  m_Name: Trash_Battery_Interactable
+  m_Name: Trash_SmallBattery_Interactable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

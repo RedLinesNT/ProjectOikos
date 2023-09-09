@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 1925141729972502823}
   - component: {fileID: 650255584995769736}
   m_Layer: 0
-  m_Name: Trash_Tomato_Interactable
+  m_Name: Trash_RottenTomato_Interactable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

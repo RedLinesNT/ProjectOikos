@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b05388c9cfc4e4ca17afdfd3c1a83a, type: 3}
+  m_Name: Magazine_TrashData
+  m_EditorClassIdentifier: 
+  internalItemName: Magazines (Open/Closed)
+  identifier: 3
+  trashBinIdentifier: 2
+  trashModelPrefabs:
+  - {fileID: 4169019123985618193, guid: 12dbd90a366593447b4cc8f754a365f8, type: 3}
+  - {fileID: 1931062883125677467, guid: c29b09053d6d29e46ba48c3527b40574, type: 3}
+  trashNameLocalizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:41702b9cbe6f8ec4b89c357b42b17f3a
+    m_TableEntryReference:
+      m_KeyId: 425049686016
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  trashTypeLocalizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:a20f74294c8537d4ab92f0dc9a9b1552
+    m_TableEntryReference:
+      m_KeyId: 44169134080
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  trashLifespanLocalizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:f5b1a8e018ea5a142918be475aefb952
+    m_TableEntryReference:
+      m_KeyId: 63664259072
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  worldImpactDescriptionLocalizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:5d157d8eb8e75a447865716db6f70c5c
+    m_TableEntryReference:
+      m_KeyId: 1050151976960
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  enableRigidbody: 1
+  rigidbodyConstraints: 0
+  references:
+    version: 2
+    RefIds: []

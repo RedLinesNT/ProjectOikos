@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b05388c9cfc4e4ca17afdfd3c1a83a, type: 3}
+  m_Name: LightBulb_TrashData
+  m_EditorClassIdentifier: 
+  internalItemName: Light bulb
+  identifier: 9
+  trashBinIdentifier: 5
+  trashModelPrefabs:
+  - {fileID: 5109788970157700650, guid: e7cad10f3aa42cf4b94d66324319b9bd, type: 3}
+  trashNameLocalizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:41702b9cbe6f8ec4b89c357b42b17f3a
+    m_TableEntryReference:
+      m_KeyId: 1248072794112
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  trashTypeLocalizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:a20f74294c8537d4ab92f0dc9a9b1552
+    m_TableEntryReference:
+      m_KeyId: 209189830656
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  trashLifespanLocalizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:f5b1a8e018ea5a142918be475aefb952
+    m_TableEntryReference:
+      m_KeyId: 362399367168
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  worldImpactDescriptionLocalizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:5d157d8eb8e75a447865716db6f70c5c
+    m_TableEntryReference:
+      m_KeyId: 1708859031552
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  enableRigidbody: 1
+  rigidbodyConstraints: 0
+  references:
+    version: 2
+    RefIds: []

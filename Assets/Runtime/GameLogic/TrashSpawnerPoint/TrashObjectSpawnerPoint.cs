@@ -12,7 +12,7 @@ namespace Oikos.GameLogic.Props.Spawners {
 
         [Header("Specific spawner settings")]
         [SerializeField, Tooltip("If set to true, the wanted object attribute will be used.")] private bool useWantedObject = false;
-        [SerializeField, Tooltip("If the attribute 'UseWantedObject' is true, this spawn point will only have this specified item type.")] private E_TRASH_OBJECT_TYPE wantedObject = E_TRASH_OBJECT_TYPE.PLACEHOLDER;
+        [SerializeField, Tooltip("If the attribute 'UseWantedObject' is true, this spawn point will only have this specified item type.")] private E_TRASH_OBJECT_TYPE wantedObject = E_TRASH_OBJECT_TYPE.UNKNOWN;
         
         #endregion
 

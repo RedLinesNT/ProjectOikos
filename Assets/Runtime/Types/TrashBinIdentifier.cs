@@ -4,9 +4,12 @@
     /// Identifiers for waste containers
     /// </summary>
     public enum E_TRASHBIN_IDENTIFIER {
-        PLACEHOLDER,
+        UNKNOWN = 0,
         GLASS,
-        CARDBOARD,
+        PAPER,
+        PLASTIC,
+        COMPOST,
+        COLLECT_POINT
     }
     
 }
