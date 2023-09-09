@@ -7,11 +7,6 @@ namespace Oikos.Core.SceneManagement {
     public static class SceneManager {
 
         #region Attributes
-
-        /// <summary>
-        /// Is the SceneManager able to be used
-        /// </summary>
-        private static bool IsInitialized = false;
         
         /// <summary>
         /// Array of every Scene Gameplay Data files.
@@ -55,10 +50,10 @@ namespace Oikos.Core.SceneManagement {
         /// <summary>
         /// Initialize the SceneManager
         /// </summary>
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)] private static void Initialize() {
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)] private static void Initialize() {
             sceneDatas = ResourceFetcher.GetResourceFilesFromType<SceneGameplayData>(); //Get every SceneGameplayData files
             
-            if(sceneDatas == null) { //If no SceneGameplayData files has been found
+            if(sceneDatas == null || sceneDatas.Length <= 0) { //If no SceneGameplayData files has been found
                 Logger.TraceWarning("Scene Manager", "There's no SceneGameplayData files found! This scene manager will no longer allow calls.");
                 return;
             }
@@ -67,9 +62,7 @@ namespace Oikos.Core.SceneManagement {
                 PreviousActiveScene = ActiveScene;
                 ActiveScene = FindSceneGameplayDataFromPath(_scene.path);
                 onSceneLoaded?.Invoke(ActiveScene);
-            }; 
-            
-            IsInitialized = true;
+            };
         }
 
         #endregion

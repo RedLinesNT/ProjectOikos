@@ -11,54 +11,74 @@ namespace Oikos.GameLogic.Props.Spawners {
         #region Attributes
 
         [Header("Specific spawner settings")]
-        [SerializeField, Tooltip("If set to true, the wanted object attribute will be used.")] private bool useWantedObject = false;
-        [SerializeField, Tooltip("If the attribute 'UseWantedObject' is true, this spawn point will only have this specified item type.")] private E_TRASH_OBJECT_TYPE wantedObject = E_TRASH_OBJECT_TYPE.UNKNOWN;
+        [SerializeField, Tooltip("If set to true, only the wanted object property will allowed to spawn on this point .")] private bool useWantedObject = false;
+        [SerializeField, Tooltip("If the property 'UseWantedObject' is true, this point will only be able to instantiate the type specified here.")] private E_TRASH_OBJECT_TYPE wantedObject = E_TRASH_OBJECT_TYPE.UNKNOWN;
         
         #endregion
 
         #region Runtime values
 
         /// <summary>
-        /// The constraints of the TrashObject's rigidbody
+        /// The constraints of the TrashObject's rigidbody.
         /// </summary>
         private TrashObjectSpawnerRigidbodyConstraintsOverride rigidbodyConstraintsOverride = null;
 
-        /// <summary>
-        /// The instantiated trash object prefab
-        /// </summary>
-        private InteractableTrashobject trashobjectInstance = null;
-        
         #endregion
 
+        #region Properties
+
+        /// <summary>
+        /// The instantiated trash object prefab.
+        /// </summary>
+        public InteractableTrashobject TrashObjectInstance { get; private set; }
+        
+        /// <summary>
+        /// If set to true, only the wanted object property will allowed to spawn on this point.
+        /// </summary>
+        public bool UseWantedObject { get { return useWantedObject; } }
+        
+        /// <summary>
+        /// If the property "UseWantedObject" is true, this point will only be able to instantiate the type specified here.
+        /// </summary>
+        public E_TRASH_OBJECT_TYPE WantedObject { get { return wantedObject; } }
+
+        #endregion
+        
         #region TrashObjectSpawnerPoint's methods
 
-        public bool InstantiateTrashobject(TrashObjectData _trashObject, bool _overrideTrashobject = false) {
-            if(trashobjectInstance != null && !_overrideTrashobject) {
+        /// <summary>
+        /// Instantiate a TrashObject on this spawn point.
+        /// </summary>
+        /// <param name="_trashObject">The TrashObject's data file</param>
+        /// <param name="_overrideTrashobject">If set to true, and if there's a TrashObject already spawned, the current TrashObject will be overwritten by the new one.</param>
+        /// <returns>The spawned TrashObject</returns>
+        public InteractableTrashobject InstantiateTrashObject(TrashObjectData _trashObject, bool _overrideTrashobject = false) {
+            if(TrashObjectInstance != null && !_overrideTrashobject) {
                 Logger.TraceWarning("Trash Object Spawner", $"Unable to spawn the trash object '{_trashObject.InternalName}', there's already a trash object spawner here!");
-                return false;
+                return null;
             }
             
             if(useWantedObject) { //If the object given here is not the one wanted
                 if(_trashObject.Identifier != wantedObject) {
-                    return false;
+                    return null;
                 }
             }
             
             //Spawn the trash object
-            trashobjectInstance = Instantiate(_trashObject.PickRandomPrefab(), transform.position, transform.rotation); //Instantiate the prefab
+            TrashObjectInstance = Instantiate(_trashObject.PickRandomPrefab(), transform.position, transform.rotation); //Instantiate the prefab
             
             //Apply the Rigidbody constraints, if there's a Rigidbody component
-            if(trashobjectInstance.RigidbodyComponent == null) return true;
+            if(TrashObjectInstance.RigidbodyComponent == null) return TrashObjectInstance;
             
             if(rigidbodyConstraintsOverride != null) {
-                trashobjectInstance.RigidbodyComponent.isKinematic = !rigidbodyConstraintsOverride.EnableRigidbody;
-                trashobjectInstance.RigidbodyComponent.constraints = rigidbodyConstraintsOverride.RigidbodyConstraints;
+                TrashObjectInstance.RigidbodyComponent.isKinematic = !rigidbodyConstraintsOverride.EnableRigidbody;
+                TrashObjectInstance.RigidbodyComponent.constraints = rigidbodyConstraintsOverride.RigidbodyConstraints;
             } else {
-                trashobjectInstance.RigidbodyComponent.isKinematic = !_trashObject.EnableRigidbody;
-                trashobjectInstance.RigidbodyComponent.constraints = _trashObject.RigidbodyConstraints;
+                TrashObjectInstance.RigidbodyComponent.isKinematic = !_trashObject.EnableRigidbody;
+                TrashObjectInstance.RigidbodyComponent.constraints = _trashObject.RigidbodyConstraints;
             }
             
-            return true;
+            return TrashObjectInstance;
         }
 
         #endregion

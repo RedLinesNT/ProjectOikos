@@ -5,6 +5,7 @@ using Oikos.Core;
 using Oikos.Core.SceneManagement;
 using Oikos.Core.Systems;
 using Oikos.Data;
+using Oikos.GameLogic.Interactable;
 using Oikos.GameLogic.Props.Spawners;
 using Object = UnityEngine.Object;
 
@@ -14,11 +15,6 @@ namespace Oikos.GameLogic.Systems {
 
         #region Properties
 
-        /// <summary>
-        /// The list of loaded Trash Objects on the current scene
-        /// </summary>
-        private static List<TrashObjectData> spawnedTrashObjects = new List<TrashObjectData>();
-        
         /// <summary>
         /// Array of every trash objects spawn points
         /// </summary>
@@ -31,11 +27,13 @@ namespace Oikos.GameLogic.Systems {
         public override void InitializeSystem() {
             InternalName = $"TrashObjectLevelSystem";
             
+            LoadGameplayContent();
+            
             IsInitialized = true;
         }
 
         public override void ReloadSystem() {
-            
+            LoadGameplayContent();
         }
 
         public override void DisposeSystem() {
@@ -57,7 +55,7 @@ namespace Oikos.GameLogic.Systems {
             
             //If there's no Trash Object Spawn Point found, don't execute anything
             if(trashSpawnerPoints == null) {
-                Logger.Trace("TrashObjectManager System", $"Gameplay context related content couldn't be loaded! (No TrashObjectSpawnPoint found in the active scene's SceneGameplayData file!)");
+                Logger.Trace("TrashObjectManager System", $"Gameplay context related content couldn't be loaded! (No TrashObjectSpawnPoint found in the active scene!)");
                 return;
             }
             
@@ -67,37 +65,63 @@ namespace Oikos.GameLogic.Systems {
                 return;
             }
             
-            //Create a new list of TrashObjectData to copy the data from the SceneGameplayData file
-            List<TrashObjectData> _sceneObjects = new List<TrashObjectData>();
-
+            List<TrashObjectData> _sceneObjects = new List<TrashObjectData>(); //Create a new list of TrashObjectData to copy the data from the SceneGameplayData file
+            List<TrashObjectSpawnerPoint> _sceneObjectsSpawnPoints = new List<TrashObjectSpawnerPoint>(); //Create a new list of TrashObjectSpawnerPoint to copy the Trash Spawners from the current active scene
+            
             for(int i=0; i<SceneManager.ActiveScene.TrashObjects.Length; i++) { //Populate the new TrashObjectData list
                 _sceneObjects.Insert(i, SceneManager.ActiveScene.TrashObjects[i]); //Insert this new element
             }
             
-            for(int i=0; i<trashSpawnerPoints.Length; i++) {
-                bool _instantiateResult = trashSpawnerPoints[i].InstantiateTrashobject(_sceneObjects.First()); //Spawn the trash object (With the first element of this list)
-                if (!_instantiateResult) continue; 
-                
-                //If this element was correctly spawned, remove this element
-                spawnedTrashObjects.Add(_sceneObjects.First()); //Add this object to the loaded objects
-                _sceneObjects.Remove(_sceneObjects.First());
+            for(int i=0; i<trashSpawnerPoints.Length; i++) { //Populate the new TrashObjectSpawnerPoint list
+                _sceneObjectsSpawnPoints.Insert(i, trashSpawnerPoints[i]); //Insert this new element
             }
             
-            //If there's trash objects remaining to spawn, and this scene is allowed to reuse spawn points
-            if(_sceneObjects.Count > 0 && SceneManager.ActiveScene.AllowTrashObjectSpawnsReuse) {
-                for(int i=0; i<trashSpawnerPoints.Length; i++) { //Re-execute the same action, but with the override flag on the spawn point
-                    bool _instantiateResult = trashSpawnerPoints[i].InstantiateTrashobject(_sceneObjects.First(), true); //Spawn the trash object (With the first element of this list)
-                    if (!_instantiateResult) continue;
+            //Now try to spawn the trash objects into the scene
+            for(int i=0; i<_sceneObjectsSpawnPoints.Count; i++) {
+                if(_sceneObjects.Count <= 0) { //There's no items left to spawn
+                    break; //Break on this for loop
+                }
+                
+                if(_sceneObjectsSpawnPoints[i].UseWantedObject) { //If this spawn point only want a specific trash object
+                    for(int y=0; y<_sceneObjects.Count; y++) { //Find if the Scene trash objects definition contain the wanted item
+                        if(_sceneObjectsSpawnPoints[i].WantedObject == _sceneObjects[y].Identifier) { //If the object's type is the one asked, Instantiate it
+                            InteractableTrashobject _newTrashObjectConstraint = _sceneObjectsSpawnPoints[i].InstantiateTrashObject(_sceneObjects[y]);
+                            _newTrashObjectConstraint.OnPointerClickEvent += () => { OnTrashObjectPickedUp(_newTrashObjectConstraint); }; //Bind the event
+                            
+                            //Remove this spawn point and item from the lists
+                            _sceneObjectsSpawnPoints.RemoveAt(i); //Remove the spawn point
+                            _sceneObjects.RemoveAt(y); //Remove the TrashObject
+                            
+                            _sceneObjects.Sort();
+                            
+                            break; //Break on the item's loop
+                        }
+                    }
+                } else {
+                    //Just spawn the next item on this spawn point
+                    InteractableTrashobject _newTrashObject = _sceneObjectsSpawnPoints[i].InstantiateTrashObject(_sceneObjects.First());
+                    _newTrashObject.OnPointerClickEvent += () => { OnTrashObjectPickedUp(_newTrashObject); };
+                
+                    //Remove this spawn point and item from the lists
+                    _sceneObjectsSpawnPoints.RemoveAt(i); //Remove the spawn point
+                    _sceneObjects.Remove(_sceneObjects.First()); //Remove the TrashObject
                     
-                    //If this element was correctly spawned, remove this element
-                    spawnedTrashObjects.Add(_sceneObjects.First()); //Add this object to the loaded objects
-                    _sceneObjects.Remove(_sceneObjects.First());
+                    _sceneObjects.Sort();
                 }
             }
+            
             
             Logger.Trace("TrashObjectManager System", $"Gameplay context related content loaded. ('{_sceneObjects.Count}' Trash Objects didn't spawned)");
         }
 
+        /// <summary>
+        /// Triggered when a TrashObject on the scene has been clicked on.
+        /// </summary>
+        /// <param name="_objectClicked">The object that has been clicked on</param>
+        private void OnTrashObjectPickedUp(InteractableTrashobject _objectClicked) {
+            Logger.Trace("TrashObjectManager System", $"Trash object: {_objectClicked.name} has been clicked on");
+        }
+        
         #endregion
         
     }
