@@ -16,7 +16,12 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 453b6cdedb96b1845a370f5f9560a7b3
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: a440b6ec964244c43a715c074e9c2919
+    m_Address: Assets/Prefabs/Controllers/OrbitalCameraController.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: fae19c573713ef9489043fdf0cf49a4d, type: 2}
   m_SchemaSet:

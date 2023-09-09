@@ -18,7 +18,7 @@ namespace Oikos.GameLogic.Systems {
         /// <summary>
         /// Array of every trash objects spawn points
         /// </summary>
-        private static TrashObjectSpawnerPoint[] trashSpawnerPoints = null;
+        private TrashObjectSpawnerPoint[] trashSpawnerPoints = null;
 
         #endregion
         
@@ -79,7 +79,7 @@ namespace Oikos.GameLogic.Systems {
             //Now try to spawn the trash objects into the scene
             for(int i=0; i<_sceneObjectsSpawnPoints.Count; i++) {
                 if(_sceneObjects.Count <= 0) { //There's no items left to spawn
-                    break; //Break on this for loop
+                    break; //Break on this loop
                 }
                 
                 if(_sceneObjectsSpawnPoints[i].UseWantedObject) { //If this spawn point only want a specific trash object

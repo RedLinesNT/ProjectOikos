@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System;
+using Oikos.GameLogic.Controller;
 using Oikos.GameLogic.Systems;
 
 namespace Oikos.Core.Systems {
@@ -8,6 +9,7 @@ namespace Oikos.Core.Systems {
         
         private static readonly Dictionary<E_GAME_SYSTEM_TYPE, Type> gameSystemRegister = new Dictionary<E_GAME_SYSTEM_TYPE, Type>() {
             { E_GAME_SYSTEM_TYPE.TRASH_OBJECT_SPAWNER, typeof(TrashObjectManagerSystem) }, //Trash Object Manager System
+            { E_GAME_SYSTEM_TYPE.ORBITAL_CAMERA_CONTROLLER_SPAWNER, typeof(OrbitalCameraSpawnerSystem) }, //Orbital Camera Controller Spawner
         };
         
         /// <summary>

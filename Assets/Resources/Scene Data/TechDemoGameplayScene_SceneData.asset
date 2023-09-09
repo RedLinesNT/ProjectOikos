@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: TechDemoGameplayScene_SceneData
   m_EditorClassIdentifier: 
   scene:
-    sceneAsset: {fileID: 0}
-    scenePath: 
+    sceneAsset: {fileID: 102900000, guid: 5d5dfb78d855b874b89ac1ff01ade1e1, type: 3}
+    scenePath: Assets/Scenes/Levels/TechDemoGameplayScene.unity
   sceneIdentifier: 0
-  sceneIdentifierString: 
-  trashObjects: []
+  sceneIdentifierString: TechDemoShowroom
+  trashObjects:
+  - {fileID: 11400000, guid: 354a70b3a3637cd488b8123fab05b1f9, type: 2}
   allowSpawnReuse: 0
   gameSysDefinition:
     keepAlivePreviousSystems: 0
-    requiredSystems: 
+    requiredSystems: 0000000001000000
