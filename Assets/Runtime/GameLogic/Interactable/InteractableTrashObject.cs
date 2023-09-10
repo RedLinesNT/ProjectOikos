@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Oikos.Data;
+using UnityEngine;
 using Logger = Oikos.Core.Logger;
 
 namespace Oikos.GameLogic.Interactable {
@@ -18,6 +19,11 @@ namespace Oikos.GameLogic.Interactable {
         /// The Rigidbody component of this trash object
         /// </summary>
         public Rigidbody RigidbodyComponent { get { return rigidbodyComponent; } }
+        
+        /// <summary>
+        /// The Trash Object Data of this trash object
+        /// </summary>
+        public TrashObjectData TrashObjectData { get; set; } = null;
 
         #endregion
 

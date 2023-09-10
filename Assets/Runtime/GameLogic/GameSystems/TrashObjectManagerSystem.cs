@@ -13,7 +13,7 @@ namespace Oikos.GameLogic.Systems {
     
     public class TrashObjectManagerSystem : AGameSystem {
 
-        #region Properties
+        #region Attributes
 
         /// <summary>
         /// Array of every trash objects spawn points
@@ -21,11 +21,22 @@ namespace Oikos.GameLogic.Systems {
         private TrashObjectSpawnerPoint[] trashSpawnerPoints = null;
 
         #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// The TrashObjectData file of the last Trash Interactable Object hit
+        /// </summary>
+        public static TrashObjectData LastTrashObjectHit { get; private set; }
+
+        #endregion
         
         #region AGameSystem's virtual methods
 
         public override void InitializeSystem() {
             InternalName = $"TrashObjectLevelSystem";
+            
+            LastTrashObjectHit = null;
             
             LoadGameplayContent();
             
@@ -37,7 +48,7 @@ namespace Oikos.GameLogic.Systems {
         }
 
         public override void DisposeSystem() {
-            
+            LastTrashObjectHit = null;
         }
 
         #endregion
@@ -87,6 +98,7 @@ namespace Oikos.GameLogic.Systems {
                         if(_sceneObjectsSpawnPoints[i].WantedObject == _sceneObjects[y].Identifier) { //If the object's type is the one asked, Instantiate it
                             InteractableTrashobject _newTrashObjectConstraint = _sceneObjectsSpawnPoints[i].InstantiateTrashObject(_sceneObjects[y]);
                             _newTrashObjectConstraint.IsInteractable = true;
+                            _newTrashObjectConstraint.TrashObjectData = _sceneObjects[y];
                             _newTrashObjectConstraint.OnPointerClickEvent += () => { OnTrashObjectPickedUp(_newTrashObjectConstraint); }; //Bind the event
                             
                             //Remove this spawn point and item from the lists
@@ -102,6 +114,7 @@ namespace Oikos.GameLogic.Systems {
                     //Just spawn the next item on this spawn point
                     InteractableTrashobject _newTrashObject = _sceneObjectsSpawnPoints[i].InstantiateTrashObject(_sceneObjects.First());
                     _newTrashObject.IsInteractable = true;
+                    _newTrashObject.TrashObjectData = _sceneObjects.First();
                     _newTrashObject.OnPointerClickEvent += () => { OnTrashObjectPickedUp(_newTrashObject); };
                 
                     //Remove this spawn point and item from the lists
@@ -120,8 +133,11 @@ namespace Oikos.GameLogic.Systems {
         /// Triggered when a TrashObject on the scene has been clicked on.
         /// </summary>
         /// <param name="_objectClicked">The object that has been clicked on</param>
+        /// <param name="_objectData">The trash object data of the trash object clicked on.</param>
         private void OnTrashObjectPickedUp(InteractableTrashobject _objectClicked) {
-            Logger.Trace("TrashObjectManager System", $"Trash object: {_objectClicked.name} has been clicked on");
+            LastTrashObjectHit = _objectClicked.TrashObjectData;
+            
+            Logger.Trace("TrashObjectManager System", $"Trash object: {_objectClicked.name} has been clicked on (Data file internal name: {LastTrashObjectHit.InternalName})");
         }
         
         #endregion

@@ -19,6 +19,7 @@ MonoBehaviour:
   sceneIdentifierString: TechDemoShowroom
   trashObjects:
   - {fileID: 11400000, guid: 354a70b3a3637cd488b8123fab05b1f9, type: 2}
+  - {fileID: 11400000, guid: 43445af4aaf77bf4aae31f0ed424d069, type: 2}
   allowSpawnReuse: 0
   gameSysDefinition:
     keepAlivePreviousSystems: 0
