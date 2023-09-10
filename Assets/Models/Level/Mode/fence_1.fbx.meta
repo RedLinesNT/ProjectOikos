@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: tronc
-    second: {fileID: 2100000, guid: fff14bd789537594cbe262c25a6b7840, type: 2}
+    second: {fileID: 2100000, guid: cce6fb33b1f19144cbab1a4838ec8c24, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
