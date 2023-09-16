@@ -87,8 +87,9 @@ namespace Oikos.GameLogic.Systems {
                 _sceneObjectsSpawnPoints.Insert(i, trashSpawnerPoints[i]); //Insert this new element
             }
             
+            //TODO: You better Kill yourself NOW!!! (#Unity2023 <3)
             //Now try to spawn the trash objects into the scene
-            for(int i=0; i<_sceneObjectsSpawnPoints.Count; i++) {
+            /*for(int i=0; i<_sceneObjectsSpawnPoints.Count; i++) {
                 if(_sceneObjects.Count <= 0) { //There's no items left to spawn
                     break; //Break on this loop
                 }
@@ -105,7 +106,9 @@ namespace Oikos.GameLogic.Systems {
                             _sceneObjectsSpawnPoints.RemoveAt(i); //Remove the spawn point
                             _sceneObjects.RemoveAt(y); //Remove the TrashObject
                             
-                            _sceneObjects.Sort();
+                            if(_sceneObjects.Count <= 0) { //There's no items left to spawn
+                                _sceneObjects.Sort();
+                            }
                             
                             break; //Break on the item's loop
                         }
@@ -121,10 +124,22 @@ namespace Oikos.GameLogic.Systems {
                     _sceneObjectsSpawnPoints.RemoveAt(i); //Remove the spawn point
                     _sceneObjects.Remove(_sceneObjects.First()); //Remove the TrashObject
                     
-                    _sceneObjects.Sort();
+                    if(_sceneObjects.Count <= 0) { //There's no items left to spawn
+                        _sceneObjects.Sort();
+                    }
                 }
-            }
+            }*/
             
+            for(int i=0; i<_sceneObjects.Count; i++) {
+                //Just spawn the next item on this spawn point
+                InteractableTrashobject _newTrashObject = _sceneObjectsSpawnPoints.First().InstantiateTrashObject(_sceneObjects[i]);
+                _newTrashObject.IsInteractable = true;
+                _newTrashObject.TrashObjectData = _sceneObjects[i];
+                _newTrashObject.OnPointerClickEvent += () => { OnTrashObjectPickedUp(_newTrashObject); };
+                
+                //Remove this spawn point and item from the lists
+                _sceneObjectsSpawnPoints.Remove(_sceneObjectsSpawnPoints.First()); //Remove the spawn point
+            }
             
             Logger.Trace("TrashObjectManager System", $"Gameplay context related content loaded.");
         }
