@@ -131,6 +131,10 @@ namespace Oikos.GameLogic.Systems {
             }*/
             
             for(int i=0; i<_sceneObjects.Count; i++) {
+                if(_sceneObjects.Count <= 0) { //There's no items left to spawn
+                    break; //Break on this loop
+                }
+                
                 //Just spawn the next item on this spawn point
                 InteractableTrashobject _newTrashObject = _sceneObjectsSpawnPoints.First().InstantiateTrashObject(_sceneObjects[i]);
                 _newTrashObject.IsInteractable = true;
