@@ -137,6 +137,9 @@ namespace Oikos.GameLogic.Systems {
                 
                 //Just spawn the next item on this spawn point
                 InteractableTrashobject _newTrashObject = _sceneObjectsSpawnPoints.First().InstantiateTrashObject(_sceneObjects[i]);
+                
+                if(_newTrashObject == null) break;
+                
                 _newTrashObject.IsInteractable = true;
                 _newTrashObject.TrashObjectData = _sceneObjects[i];
                 _newTrashObject.OnPointerClickEvent += () => { OnTrashObjectPickedUp(_newTrashObject); };

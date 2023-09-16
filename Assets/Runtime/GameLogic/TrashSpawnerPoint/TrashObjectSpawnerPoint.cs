@@ -10,9 +10,9 @@ namespace Oikos.GameLogic.Props.Spawners {
 
         #region Attributes
 
-        [Header("Specific spawner settings")]
-        [SerializeField, Tooltip("If set to true, only the wanted object property will allowed to spawn on this point .")] private bool useWantedObject = false;
-        [SerializeField, Tooltip("If the property 'UseWantedObject' is true, this point will only be able to instantiate the type specified here.")] private E_TRASH_OBJECT_TYPE wantedObject = E_TRASH_OBJECT_TYPE.UNKNOWN;
+        //[Header("Specific spawner settings")]
+        //[SerializeField, Tooltip("If set to true, only the wanted object property will allowed to spawn on this point .")] private bool useWantedObject = false;
+        //[SerializeField, Tooltip("If the property 'UseWantedObject' is true, this point will only be able to instantiate the type specified here.")] private E_TRASH_OBJECT_TYPE wantedObject = E_TRASH_OBJECT_TYPE.UNKNOWN;
         
         #endregion
 
@@ -35,12 +35,12 @@ namespace Oikos.GameLogic.Props.Spawners {
         /// <summary>
         /// If set to true, only the wanted object property will allowed to spawn on this point.
         /// </summary>
-        public bool UseWantedObject { get { return useWantedObject; } }
+        public bool UseWantedObject { get { return false; } }
         
         /// <summary>
         /// If the property "UseWantedObject" is true, this point will only be able to instantiate the type specified here.
         /// </summary>
-        public E_TRASH_OBJECT_TYPE WantedObject { get { return wantedObject; } }
+        public E_TRASH_OBJECT_TYPE WantedObject { get { return E_TRASH_OBJECT_TYPE.UNKNOWN; } }
 
         #endregion
         
@@ -58,11 +58,11 @@ namespace Oikos.GameLogic.Props.Spawners {
                 return null;
             }
             
-            if(useWantedObject) { //If the object given here is not the one wanted
+            /*if(useWantedObject) { //If the object given here is not the one wanted
                 if(_trashObject.Identifier != wantedObject) {
                     return null;
                 }
-            }
+            }*/
             
             //Spawn the trash object
             TrashObjectInstance = Instantiate(_trashObject.PickRandomPrefab(), transform.position, transform.rotation); //Instantiate the prefab
