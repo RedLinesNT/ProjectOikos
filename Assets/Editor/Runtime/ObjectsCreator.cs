@@ -49,6 +49,26 @@ namespace Oikos.Editor {
             Selection.activeObject = _asset;
         } 
         
+        /// <summary>
+        /// Create a UIWidgetReferences (ScriptableObject) file
+        /// </summary>
+        [MenuItem("Oikos/UI/Create new UI Widget References file...")] public static void CreateUIWidgetReferencesFile() {
+            UIWidgetReference _asset = ScriptableObject.CreateInstance<UIWidgetReference>();
+
+            //Check if the directory exists
+            if (!Directory.Exists("Assets/Resources/UI/")) {
+                Directory.CreateDirectory("Assets/Resources/UI/");
+            }
+
+            string _name = AssetDatabase.GenerateUniqueAssetPath("Assets/Resources/UI/New UI Prefabs reference file.asset");
+            AssetDatabase.CreateAsset(_asset, _name);
+            AssetDatabase.SaveAssets();
+
+            EditorUtility.FocusProjectWindow();
+
+            Selection.activeObject = _asset;
+        }
+        
     }
     
 }
