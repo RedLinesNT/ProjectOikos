@@ -20,7 +20,15 @@ MonoBehaviour:
   trashObjects:
   - {fileID: 11400000, guid: 354a70b3a3637cd488b8123fab05b1f9, type: 2}
   - {fileID: 11400000, guid: 43445af4aaf77bf4aae31f0ed424d069, type: 2}
-  allowSpawnReuse: 0
+  - {fileID: 11400000, guid: a17f9c0dd0e7a5d49a130db7c39ea920, type: 2}
+  - {fileID: 11400000, guid: b17b90cb4ba10084bac8ea80396f04f2, type: 2}
+  - {fileID: 11400000, guid: 7410f1f6b2e266b40a7860672928186b, type: 2}
+  - {fileID: 11400000, guid: 0ddf6f6e3b4e49544a71d23c0a319bd2, type: 2}
+  - {fileID: 11400000, guid: 2ca56cc0f43a44e4e9e603748213577d, type: 2}
+  - {fileID: 11400000, guid: 57b88d77ec7196947ab4ac43a9e6e116, type: 2}
+  - {fileID: 11400000, guid: f30102d606f49214aa469609bb8a11cf, type: 2}
+  - {fileID: 11400000, guid: 9cb6bf468d228364d9f316e62fd8b7d7, type: 2}
+  allowSpawnReuse: 1
   gameSysDefinition:
     keepAlivePreviousSystems: 0
     requiredSystems: 0000000001000000
