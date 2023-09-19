@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using Oikos.Core.SceneManagement;
+using Oikos.Core.UI;
 using Oikos.Data;
 using UnityEditor;
 using UnityEngine;
@@ -53,7 +54,7 @@ namespace Oikos.Editor {
         /// Create a UIWidgetReferences (ScriptableObject) file
         /// </summary>
         [MenuItem("Oikos/UI/Create new UI Widget References file...")] public static void CreateUIWidgetReferencesFile() {
-            UIWidgetReference _asset = ScriptableObject.CreateInstance<UIWidgetReference>();
+            UIWidgetReferences _asset = ScriptableObject.CreateInstance<UIWidgetReferences>();
 
             //Check if the directory exists
             if (!Directory.Exists("Assets/Resources/UI/")) {
