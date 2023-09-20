@@ -23,6 +23,8 @@ namespace Oikos.Data {
         [SerializeField, Tooltip("The trash's type name (Localized string).")] private LocalizedString trashTypeLocalizedString = null;
         [SerializeField, Tooltip("The trash's lifespan (Localized string).")] private LocalizedString trashLifespanLocalizedString = null;
         [SerializeField, Tooltip("The trash's world impact description (Localized string).")] private LocalizedString worldImpactDescriptionLocalizedString = null;
+        [SerializeField, Tooltip("The text displayed when picking up this trash object (Localized string).")] private LocalizedString trashPickupLocalizedString = null;
+        [SerializeField, Tooltip("The text displayed when throwing away this trash object in the correct trash-bin (Localized string).")] private LocalizedString trashThrowAwayLocalizedString = null;
         
         [Header("Trash Item Physics settings")]
         [SerializeField, Tooltip("Enable the item's rigidbody. This will work only if a Rigidbody Component can be found.")] private bool enableRigidbody = true;
@@ -71,6 +73,14 @@ namespace Oikos.Data {
         /// The world impact's description of this trash object (This string is already translated in the correct language).
         /// </summary>
         public string WorldImpactDescriptionLocalizedString { get { return worldImpactDescriptionLocalizedString.GetLocalizedString(); } }
+        /// <summary>
+        /// The text displayed when picking up this trash object (This string is already translated in the correct language).
+        /// </summary>
+        public string PickupLineLocalizedString { get { return trashPickupLocalizedString.GetLocalizedString(); } }
+        /// <summary>
+        /// The text displayed when throwing away this trash object in the correct trash-bin (This string is already translated in the correct language).
+        /// </summary>
+        public string ThrowAwayLocalizedString { get { return trashThrowAwayLocalizedString.GetLocalizedString(); } }
         
         /// <summary>
         /// Enable the item's rigidbody.
