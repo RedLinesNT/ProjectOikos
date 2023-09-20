@@ -41,6 +41,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-fr
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f86fb10b35591be40a507ab69c647273
+    m_Address: Trash Pickup Lines_fr
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-fr
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 280a5eeb7eb35f849be595bef7cc71a0
+    m_Address: Trash Throw Away Lines_fr
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-fr
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: fae19c573713ef9489043fdf0cf49a4d, type: 2}
   m_SchemaSet:

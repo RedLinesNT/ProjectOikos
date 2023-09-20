@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Trash Throw Away Lines_fr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: ddd47321f5efe7e4895ced13e583a643, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 203544039424
+    m_Localized: "super ! c\u2019est facile non la bouteille en verre va dans la
+      poubelle destin\xE9 aux verres, c\u2019est d\u2019une logique implacable !
+      maintenant gr\xE2ce au recyclage on peut recr\xE9er du verre et \xE7a ind\xE9finiment
+      !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 251191332864
+    m_Localized: "merveilleux ! c\u2019est tr\xE8s malin c\u2019est le faite que
+      \xE7a soit une bouteille en verre qui t\u2019as mis sur la piste ? en tous
+      cas une chose est sur \xE7a va permettre de refaire du verre \xE0 l\u2019infini
+      et au del\xE0"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 402928668672
+    m_Localized: "Impeccable, le papier dans la poubelle destin\xE9 au papier maintenant
+      on va pouvoir faire de la p\xE2te \xE0 papier!  pour faire quoi \xE0 ton avis
+      ? exactement du papier."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 965938483200
+    m_Localized: "excellent ! \xE7a va dans la poubelle des papiers pour en faire
+      de la p\xE2te \xE0 papier, \xE0 l\u2019inverse des nouilles, ces p\xE2t\xE9s
+      l\xE0 ne se mangeant pas\u2026 faut vraiment que je me d\xE9barrasse de ce
+      recueil de blagues\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1012075827200
+    m_Localized: "parfait ! la bouteille en plastique dans la poubelle plastique.
+      Maintenant la bouteille va \xEAtre transform\xE9e en petit grain pour faire
+      d'autres objets !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1129210155008
+    m_Localized: "excellent \xE7a va bien dans la poubelle destin\xE9 aux plastiques,
+      on va pouvoir refaire plein d\u2019objet maintenant gr\xE2ce au graines de
+      plastique qu\u2019on aura obtenu si il avait \xE9t\xE9 fonctionnel on aurait
+      aussi p\xFB le donner \xE0 quelqu\u2019un apr\xE8s l\u2019avoir bien nettoy\xE9
+      !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1175754346496
+    m_Localized: "super ! c\u2019est bien dans le composte qu\u2019il faut le mettre,
+      maintenant \xE7a va dispara\xEEtre tout seul et permettre de faire des engrais
+      naturels !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1331316887552
+    m_Localized: "parfait ! les tomates c\u2019est dans le composte et pas sur une
+      personne m\xEAme si ses blagues \xE9tais pas tr\xE8s dr\xF4le ! et en plus
+      c\u2019est plus \xE9cologique \xE7a fait de l\u2019engrais."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1373217984512
+    m_Localized: "excellent ! \xE7a va dans des points de collecte, on va pouvoir
+      s\xE9parer les mat\xE9riaux pour pouvoir refaire des objets et on va neutraliser
+      le liquide toxique dans les ampoules, le mercure."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1418319335424
+    m_Localized: "parfait t\u2019as tout compris, \xE7a va dans les points de collecte,
+      \xE7a va permettre d\u2019enlever tout le mercure, le mercure qu\u2019il ne
+      faut surtout pas confondre avec la plan\xE8te\u2026 c\u2019est la derni\xE8re
+      fois que j\u2019ouvre ce livre de blague."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

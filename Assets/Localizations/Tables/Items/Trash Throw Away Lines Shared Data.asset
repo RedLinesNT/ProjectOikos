@@ -10,59 +10,59 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: Trash Pickup Lines Shared Data
+  m_Name: Trash Throw Away Lines Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: Trash Pickup Lines
-  m_TableCollectionNameGuidString: 247c690cc8246124a8d05b619f593624
+  m_TableCollectionName: Trash Throw Away Lines
+  m_TableCollectionNameGuidString: ddd47321f5efe7e4895ced13e583a643
   m_Entries:
-  - m_Id: 85407272960
-    m_Key: glass-bottles-pickup
+  - m_Id: 203544039424
+    m_Key: glass-bottles-throw
     m_Metadata:
       m_Items: []
-  - m_Id: 138112897024
-    m_Key: parfum_with-metallic-package-pickup
+  - m_Id: 251191332864
+    m_Key: parfum_with-metallic-package-throw
     m_Metadata:
       m_Items: []
-  - m_Id: 362327805952
-    m_Key: magazine-pickup
+  - m_Id: 402928668672
+    m_Key: magazine-throw
     m_Metadata:
       m_Items: []
-  - m_Id: 464467496960
-    m_Key: books-pickup
+  - m_Id: 965938483200
+    m_Key: books-throw
     m_Metadata:
       m_Items: []
-  - m_Id: 681732444160
-    m_Key: plastic-bottles-pickup
+  - m_Id: 1012075827200
+    m_Key: plastic-bottles-throw
     m_Metadata:
       m_Items: []
-  - m_Id: 772664954880
-    m_Key: kid-toy-pickup
+  - m_Id: 1129210155008
+    m_Key: kid-toy-throw
     m_Metadata:
       m_Items: []
-  - m_Id: 1022309928960
-    m_Key: banana-skins-pickup
+  - m_Id: 1175754346496
+    m_Key: banana-skins-throw
     m_Metadata:
       m_Items: []
-  - m_Id: 16019622694912
-    m_Key: "\rrotten-tomatoes-pickup"
+  - m_Id: 1331316887552
+    m_Key: "\rrotten-tomatoes-throw"
     m_Metadata:
       m_Items: []
-  - m_Id: 16155958546432
-    m_Key: light-bulbs-pickup
+  - m_Id: 1373217984512
+    m_Key: light-bulbs-throw
     m_Metadata:
       m_Items: []
-  - m_Id: 16268764352512
-    m_Key: small-battery-pickup
+  - m_Id: 1418319335424
+    m_Key: small-battery-throw
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 3501711903190941698
+    rid: 3501711903190941700
   references:
     version: 2
     RefIds:
-    - rid: 3501711903190941698
+    - rid: 3501711903190941700
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1695219559257
+        m_CustomEpoch: 1695223708352
