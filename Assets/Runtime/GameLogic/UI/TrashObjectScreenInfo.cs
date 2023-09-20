@@ -24,7 +24,7 @@ namespace Oikos.GameLogic.UI {
             //Don't execute anything if the TrashObjectManagerSystem isn't launched
             if (!GameSystemModule.IsSystemLaunched(E_GAME_SYSTEM_TYPE.TRASH_OBJECT_SPAWNER) || TrashObjectManagerSystem.LastTrashObjectHit == null) return;
 
-            worldImpactDesc.text = TrashObjectManagerSystem.LastTrashObjectHit.WorldImpactDescriptionLocalizedString; //Set the localized string
+            worldImpactDesc.text = TrashObjectManagerSystem.LastTrashObjectHit.PickupLineLocalizedString; //Set the localized string
             trashIcon.sprite = TrashObjectManagerSystem.LastTrashObjectHit.TrashIcon; //Set the TrashObject's sprite icon
         }
 
