@@ -1,4 +1,5 @@
 ﻿using System;
+using Oikos.Core;
 using Oikos.Core.Systems;
 using Oikos.Core.UI;
 using Oikos.GameLogic.Systems;
@@ -24,11 +25,12 @@ namespace Oikos.GameLogic.UI {
             //Don't execute anything if the TrashObjectManagerSystem isn't launched
             if (!GameSystemModule.IsSystemLaunched(E_GAME_SYSTEM_TYPE.TRASH_OBJECT_SPAWNER) || TrashObjectManagerSystem.LastTrashObjectHit == null) return;
 
-            worldImpactDesc.text = TrashObjectManagerSystem.LastTrashObjectHit.PickupLineLocalizedString; //Set the localized string
+            worldImpactDesc.text = TrashObjectManagerSystem.LastTrashObjectHit.PickupLineLocalizedString.Trim().UppercaseFirstLetter(); //Set the localized string
             trashIcon.sprite = TrashObjectManagerSystem.LastTrashObjectHit.TrashIcon; //Set the TrashObject's sprite icon
         }
 
         private void Update() {
+            //TODO: Please, change this...
             if(Input.GetKeyDown(KeyCode.Escape)) UIWidgetSystem.DisableUIWidget(E_UI_WIDGET_TYPE.TRASH_OBJECT_WORLD_IMPACT_DESC_SCREEN);
         }
 
