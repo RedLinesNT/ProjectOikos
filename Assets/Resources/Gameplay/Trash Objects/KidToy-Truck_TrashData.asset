@@ -55,6 +55,24 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  trashPickupLocalizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:247c690cc8246124a8d05b619f593624
+    m_TableEntryReference:
+      m_KeyId: 772664954880
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  trashThrowAwayLocalizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:ddd47321f5efe7e4895ced13e583a643
+    m_TableEntryReference:
+      m_KeyId: 1129210155008
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   enableRigidbody: 1
   rigidbodyConstraints: 0
   references:
