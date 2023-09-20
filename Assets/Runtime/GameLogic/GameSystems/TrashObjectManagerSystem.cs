@@ -161,7 +161,7 @@ namespace Oikos.GameLogic.Systems {
             
             Logger.Trace("TrashObjectManager System", $"Trash object: {_objectClicked.name} has been clicked on (Data file internal name: {LastTrashObjectHit.InternalName})");
             
-            UIWidgetSystem.EnableUIWidget(E_UI_WIDGET_TYPE.PLACEHOLDER_TEST_WIDGET);
+            UIWidgetSystem.EnableUIWidget(E_UI_WIDGET_TYPE.TRASH_OBJECT_WORLD_IMPACT_DESC_SCREEN);
         }
         
         #endregion

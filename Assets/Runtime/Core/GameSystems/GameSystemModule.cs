@@ -84,7 +84,7 @@ namespace Oikos.Core.Systems {
         /// <summary>
         /// Return true if the system asked is launched
         /// </summary>
-        private static bool IsSystemLaunched(E_GAME_SYSTEM_TYPE _systemType) {
+        public static bool IsSystemLaunched(E_GAME_SYSTEM_TYPE _systemType) {
             foreach (KeyValuePair<E_GAME_SYSTEM_TYPE, AGameSystem> _currentGameSystem in loadedGameSystem) {
                 if(_currentGameSystem.Key == _systemType) {
                     return true;
