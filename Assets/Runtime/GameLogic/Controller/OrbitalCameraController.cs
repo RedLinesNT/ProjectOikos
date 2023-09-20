@@ -67,6 +67,11 @@ namespace Oikos.GameLogic.Controller {
         /// </summary>
         public float Zoom { get; private set; } = 0;
 
+        /// <summary>
+        /// Is this OrbitalCameraController able to use the inputs
+        /// </summary>
+        public bool UseInputs { get; set; } = true;
+        
         #endregion
 
         #region ACameraEntity's MonoBehaviour's methods
@@ -102,6 +107,8 @@ namespace Oikos.GameLogic.Controller {
         /// Move the camera from the inputs
         /// </summary>
         private void CameraMovementBehaviour() {
+            if (!UseInputs) return;
+            
             float _mouseXInput = Input.GetAxis("Mouse X") * mouseSensitivity;
             float _mouseYInput = Input.GetAxis("Mouse Y") * mouseSensitivity;
             
@@ -118,6 +125,8 @@ namespace Oikos.GameLogic.Controller {
         /// Handle the Zoom behaviour
         /// </summary>
         private void ZoomBehaviour() {
+            if (!UseInputs) return;
+            
             float _scrollValue = Input.GetAxis("Mouse ScrollWheel"); //Get the Scroll Wheel value
             
             Zoom -= _scrollValue * zoomSensitivity;

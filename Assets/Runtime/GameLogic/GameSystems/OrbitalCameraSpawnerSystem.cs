@@ -23,9 +23,9 @@ namespace Oikos.GameLogic.Systems {
         #region Properties
 
         /// <summary>
-        /// The Orbital Camera Controller spawner
+        /// The Orbital Camera Controller spawned
         /// </summary>
-        public OrbitalCameraController OrbitalCameraController { get; private set; } = null;
+        public static OrbitalCameraController OrbitalCameraController { get; private set; } = null;
 
         #endregion
 

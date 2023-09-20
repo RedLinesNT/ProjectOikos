@@ -17,7 +17,19 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: a789e01a847b99748a6997cd5f50bc9d, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 7001862144
+    m_Localized: "Ce texte est traduit en fran\xE7ais."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 113130336256
+    m_Localized: "Dur\xE9e de vie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 179433893888
+    m_Localized: "Majoritairement compos\xE9 avec"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

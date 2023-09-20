@@ -13,8 +13,20 @@ MonoBehaviour:
   m_Name: Shared UI Shared Data
   m_EditorClassIdentifier: 
   m_TableCollectionName: Shared UI
-  m_TableCollectionNameGuidString: 00000000000000000000000000000000
-  m_Entries: []
+  m_TableCollectionNameGuidString: a789e01a847b99748a6997cd5f50bc9d
+  m_Entries:
+  - m_Id: 7001862144
+    m_Key: test-string
+    m_Metadata:
+      m_Items: []
+  - m_Id: 113130336256
+    m_Key: lifespan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 179433893888
+    m_Key: composed-of
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
