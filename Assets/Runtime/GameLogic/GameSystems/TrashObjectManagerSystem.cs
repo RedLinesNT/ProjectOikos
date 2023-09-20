@@ -4,6 +4,7 @@ using System.Linq;
 using Oikos.Core;
 using Oikos.Core.SceneManagement;
 using Oikos.Core.Systems;
+using Oikos.Core.UI;
 using Oikos.Data;
 using Oikos.GameLogic.Interactable;
 using Oikos.GameLogic.Props.Spawners;
@@ -155,11 +156,12 @@ namespace Oikos.GameLogic.Systems {
         /// Triggered when a TrashObject on the scene has been clicked on.
         /// </summary>
         /// <param name="_objectClicked">The object that has been clicked on</param>
-        /// <param name="_objectData">The trash object data of the trash object clicked on.</param>
         private void OnTrashObjectPickedUp(InteractableTrashobject _objectClicked) {
             LastTrashObjectHit = _objectClicked.TrashObjectData;
             
             Logger.Trace("TrashObjectManager System", $"Trash object: {_objectClicked.name} has been clicked on (Data file internal name: {LastTrashObjectHit.InternalName})");
+            
+            UIWidgetSystem.EnableUIWidget(E_UI_WIDGET_TYPE.PLACEHOLDER_TEST_WIDGET);
         }
         
         #endregion

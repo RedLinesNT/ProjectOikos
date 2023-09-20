@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
+using UnityEngine.EventSystems;
 
 namespace Oikos.Core.UI {
 
@@ -28,6 +29,10 @@ namespace Oikos.Core.UI {
         /// </summary>
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)] private static void Initialize() {
             LoadUIWidgetReferencesInternal();
+            
+            //Create a new event system
+            GameObject _eventSystem = new GameObject("UI - Event System", typeof(EventSystem), typeof(StandaloneInputModule));
+            Object.DontDestroyOnLoad(_eventSystem); //Uhhhh
         }
 
         /// <summary>
@@ -63,7 +68,7 @@ namespace Oikos.Core.UI {
             
             Logger.Trace($"UI Widget System", $"Found '{widgets.Count}' UIWidgetDefinition and preloaded '{_preloadedWidgetsCount}' among them.");
         }
-
+        
         #endregion
 
         #region UIWidgetSystem's external methods
@@ -79,6 +84,11 @@ namespace Oikos.Core.UI {
 
             for (int i=0; i<widgetsInstance.Count; i++) { //Loop into every UIWidgets instantiated (RuntimeUIWidget)
                 if (widgetsInstance[i].StringIdentifier == _uiWidgetStringIdentifier) { //If it's a match
+                    if (widgetsInstance[i].Instance == null) { //Check if there's an instance
+                        widgetsInstance.RemoveAt(i); //Remove this element from the list
+                        return; //Just stop here
+                    }
+                    
                     widgetsInstance[i].DisableUIWidget(); //Disable it
 
                     return;
@@ -99,6 +109,11 @@ namespace Oikos.Core.UI {
             
             for (int i=0; i<widgetsInstance.Count; i++) { //Loop into every UIWidgets instantiated (RuntimeUIWidget)
                 if (widgetsInstance[i].Identifier == _uiWidgetIdentifier) { //If it's a match
+                    if (widgetsInstance[i].Instance == null) { //Check if there's an instance
+                        widgetsInstance.RemoveAt(i); //Remove this element from the list
+                        return; //Just stop here
+                    }
+                    
                     widgetsInstance[i].DisableUIWidget(); //Disable it
 
                     return;
@@ -119,6 +134,11 @@ namespace Oikos.Core.UI {
 
             for (int i=0; i<widgetsInstance.Count; i++) { //Loop into every UIWidgets instantiated (RuntimeUIWidget)
                 if (widgetsInstance[i].StringIdentifier == _uiWidgetStringIdentifier) { //If it's a match
+                    if (widgetsInstance[i].Instance == null) { //Check if there's an instance
+                        widgetsInstance.RemoveAt(i); //Remove this element from the list
+                        break; //Break, a new instance will be created
+                    }
+                    
                     widgetsInstance[i].EnableUIWidget(); //Enable it
 
                     return;
@@ -148,7 +168,14 @@ namespace Oikos.Core.UI {
             
             for (int i=0; i<widgetsInstance.Count; i++) { //Loop into every UIWidgets instantiated (RuntimeUIWidget)
                 if (widgetsInstance[i].Identifier == _uiWidgetIdentifier) { //If it's a match
+                    if (widgetsInstance[i].Instance == null) { //Check if there's an instance
+                        widgetsInstance.RemoveAt(i); //Remove this element from the list
+                        break; //Break, a new instance will be created
+                    }
+                    
                     widgetsInstance[i].EnableUIWidget(); //Enable it
+
+                    return;
                 }
             }
             
