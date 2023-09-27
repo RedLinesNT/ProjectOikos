@@ -19,69 +19,67 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 203544039424
-    m_Localized: "super ! c\u2019est facile non la bouteille en verre va dans la
-      poubelle destin\xE9 aux verres, c\u2019est d\u2019une logique implacable !
-      maintenant gr\xE2ce au recyclage on peut recr\xE9er du verre et \xE7a ind\xE9finiment
-      !"
+    m_Localized: "Super ! C'est facile, non ? La bouteille en verre va dans la poubelle
+      destin\xE9e aux verres, c'est d'une logique implacable ! Maintenant, gr\xE2ce
+      au recyclage, on peut recr\xE9er du verre et \xE7a ind\xE9finiment !"
     m_Metadata:
       m_Items: []
   - m_Id: 251191332864
-    m_Localized: "merveilleux ! c\u2019est tr\xE8s malin c\u2019est le faite que
-      \xE7a soit une bouteille en verre qui t\u2019as mis sur la piste ? en tous
-      cas une chose est sur \xE7a va permettre de refaire du verre \xE0 l\u2019infini
-      et au del\xE0"
+    m_Localized: "Merveilleux ! C'est tr\xE8s malin. C'est le fait que ce soit une
+      bouteille en verre qui t'a mis sur la piste ? En tout cas, une chose est s\xFBre,
+      \xE7a va permettre de refaire du verre \xE0 l'infini et au-del\xE0."
     m_Metadata:
       m_Items: []
   - m_Id: 402928668672
-    m_Localized: "Impeccable, le papier dans la poubelle destin\xE9 au papier maintenant
-      on va pouvoir faire de la p\xE2te \xE0 papier!  pour faire quoi \xE0 ton avis
-      ? exactement du papier."
+    m_Localized: "Impeccable, le papier va dans la poubelle destin\xE9e au papier.
+      Maintenant, on va pouvoir faire de la p\xE2te \xE0 papier ! Pour faire quoi,
+      \xE0 ton avis ? Exactement, du papier."
     m_Metadata:
       m_Items: []
   - m_Id: 965938483200
-    m_Localized: "excellent ! \xE7a va dans la poubelle des papiers pour en faire
-      de la p\xE2te \xE0 papier, \xE0 l\u2019inverse des nouilles, ces p\xE2t\xE9s
-      l\xE0 ne se mangeant pas\u2026 faut vraiment que je me d\xE9barrasse de ce
-      recueil de blagues\u2026"
+    m_Localized: "Excellent ! \xC7a va dans la poubelle des papiers pour en faire
+      de la p\xE2te \xE0 papier. \xC0 l'inverse des nouilles, ces p\xE2tes-l\xE0
+      ne se mangent pas... Faut vraiment que je me d\xE9barrasse de ce recueil de
+      blagues..."
     m_Metadata:
       m_Items: []
   - m_Id: 1012075827200
-    m_Localized: "parfait ! la bouteille en plastique dans la poubelle plastique.
-      Maintenant la bouteille va \xEAtre transform\xE9e en petit grain pour faire
-      d'autres objets !"
+    m_Localized: "Parfait ! la bouteille en plastique dans la poubelle plastique.
+      Maintenant, la bouteille sera transform\xE9e en petits grains pour fabriquer
+      d'autres objets !\n"
     m_Metadata:
       m_Items: []
   - m_Id: 1129210155008
-    m_Localized: "excellent \xE7a va bien dans la poubelle destin\xE9 aux plastiques,
-      on va pouvoir refaire plein d\u2019objet maintenant gr\xE2ce au graines de
-      plastique qu\u2019on aura obtenu si il avait \xE9t\xE9 fonctionnel on aurait
-      aussi p\xFB le donner \xE0 quelqu\u2019un apr\xE8s l\u2019avoir bien nettoy\xE9
-      !"
+    m_Localized: "Excellent \xE7a va bien dans la poubelle destin\xE9 aux plastiques.
+      Maintenant on va pouvoir fabriquer plein d\u2019objet gr\xE2ce au grains de
+      plastique qu\u2019on aura obtenus. Si il avait \xE9t\xE9 en bonne \xE9tat on
+      aurait aussi pu le donner \xE0 quelqu\u2019un apr\xE8s l\u2019avoir bien nettoy\xE9
+      !\n"
     m_Metadata:
       m_Items: []
   - m_Id: 1175754346496
-    m_Localized: "super ! c\u2019est bien dans le composte qu\u2019il faut le mettre,
-      maintenant \xE7a va dispara\xEEtre tout seul et permettre de faire des engrais
-      naturels !"
+    m_Localized: "Super ! c\u2019est bien dans le compost qu\u2019il faut le mettre,
+      maintenant elle va dispara\xEEtre toute seule et permettre de faire des engrais
+      naturels !\n"
     m_Metadata:
       m_Items: []
   - m_Id: 1331316887552
-    m_Localized: "parfait ! les tomates c\u2019est dans le composte et pas sur une
-      personne m\xEAme si ses blagues \xE9tais pas tr\xE8s dr\xF4le ! et en plus
-      c\u2019est plus \xE9cologique \xE7a fait de l\u2019engrais."
+    m_Localized: "Parfait ! Les tomates c'est dans le compost et pas sur une personne,
+      m\xEAme si ses blagues n'\xE9taient pas tr\xE8s dr\xF4les ! Et en plus, c'est
+      plus \xE9cologique, \xE7a fait de l'engrais."
     m_Metadata:
       m_Items: []
   - m_Id: 1373217984512
-    m_Localized: "excellent ! \xE7a va dans des points de collecte, on va pouvoir
+    m_Localized: "Excellent ! \xC7a va dans des points de collecte, on va pouvoir
       s\xE9parer les mat\xE9riaux pour pouvoir refaire des objets et on va neutraliser
       le liquide toxique dans les ampoules, le mercure."
     m_Metadata:
       m_Items: []
   - m_Id: 1418319335424
-    m_Localized: "parfait t\u2019as tout compris, \xE7a va dans les points de collecte,
-      \xE7a va permettre d\u2019enlever tout le mercure, le mercure qu\u2019il ne
-      faut surtout pas confondre avec la plan\xE8te\u2026 c\u2019est la derni\xE8re
-      fois que j\u2019ouvre ce livre de blague."
+    m_Localized: "Parfait, t'as tout compris, \xE7a va dans les points de collecte,
+      \xE7a va permettre d'enlever tout le mercure, le mercure qu'il ne faut surtout
+      pas confondre avec la plan\xE8te... C'est la derni\xE8re fois que j'ouvre ce
+      livre de blagues."
     m_Metadata:
       m_Items: []
   references:
