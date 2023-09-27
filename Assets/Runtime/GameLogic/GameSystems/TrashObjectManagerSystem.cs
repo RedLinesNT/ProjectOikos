@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Oikos.Core;
 using Oikos.Core.SceneManagement;
 using Oikos.Core.Systems;
 using Oikos.Core.UI;
 using Oikos.Data;
 using Oikos.GameLogic.Interactable;
 using Oikos.GameLogic.Props.Spawners;
+using UnityEngine;
+using Logger = Oikos.Core.Logger;
 using Object = UnityEngine.Object;
 
 namespace Oikos.GameLogic.Systems {
@@ -29,6 +30,11 @@ namespace Oikos.GameLogic.Systems {
         /// The TrashObjectData file of the last Trash Interactable Object hit
         /// </summary>
         public static TrashObjectData LastTrashObjectHit { get; private set; }
+        
+        /// <summary>
+        /// The TrashObjectData file of the last Trash Interactable Object hit
+        /// </summary>
+        public static InteractableTrashobject LastTrashObjectHitInteractablePoint { get; private set; }
 
         #endregion
         
@@ -158,10 +164,22 @@ namespace Oikos.GameLogic.Systems {
         /// <param name="_objectClicked">The object that has been clicked on</param>
         private void OnTrashObjectPickedUp(InteractableTrashobject _objectClicked) {
             LastTrashObjectHit = _objectClicked.TrashObjectData;
-            
-            Logger.Trace("TrashObjectManager System", $"Trash object: {_objectClicked.name} has been clicked on (Data file internal name: {LastTrashObjectHit.InternalName})");
+            LastTrashObjectHitInteractablePoint = _objectClicked;
+
+            if (GameSystemModule.IsSystemLaunched(E_GAME_SYSTEM_TYPE.ORBITAL_CAMERA_CONTROLLER_SPAWNER) && OrbitalCameraSpawnerSystem.OrbitalCameraController != null) {
+                OrbitalCameraSpawnerSystem.OrbitalCameraController.MoveTrashObjectToViewPoint(_objectClicked, 1f);
+                OrbitalCameraSpawnerSystem.OrbitalCameraController.ZoomMax();
+            }
             
             UIWidgetSystem.EnableUIWidget(E_UI_WIDGET_TYPE.TRASH_OBJECT_WORLD_IMPACT_DESC_SCREEN);
+        }
+
+        public static void OnPickupScreenInfoDismissed() {
+            if (GameSystemModule.IsSystemLaunched(E_GAME_SYSTEM_TYPE.ORBITAL_CAMERA_CONTROLLER_SPAWNER) && OrbitalCameraSpawnerSystem.OrbitalCameraController != null) {
+                OrbitalCameraSpawnerSystem.OrbitalCameraController.MoveTrashObjectOutOfCameraView(LastTrashObjectHitInteractablePoint, 1f, () => MonoBehaviour.Destroy(LastTrashObjectHitInteractablePoint.gameObject));
+            }
+            
+            UIWidgetSystem.DisableUIWidget(E_UI_WIDGET_TYPE.TRASH_OBJECT_WORLD_IMPACT_DESC_SCREEN);
         }
         
         #endregion

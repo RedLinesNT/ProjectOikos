@@ -195,7 +195,7 @@ Transform:
   m_GameObject: {fileID: 1186965424000156479}
   serializedVersion: 2
   m_LocalRotation: {x: -0.26070163, y: 0.3106921, z: 0.16935468, w: 0.8982339}
-  m_LocalPosition: {x: 0.5, y: 0, z: 1}
+  m_LocalPosition: {x: 0.4, y: 0, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -250,6 +250,7 @@ MonoBehaviour:
   cameraOverrideField: {fileID: 5145018705100518563}
   target: {fileID: 0}
   cameraAnchor: {fileID: 955284128821668991}
+  trashObjectViewPoint: {fileID: 8897637157235438236}
   minXLookAngle: -60
   maxXLookAngle: 60
   minZoom: 30

@@ -13,11 +13,6 @@ MonoBehaviour:
   m_Name: Gameplay_UIWidgets
   m_EditorClassIdentifier: 
   references:
-  - prefab: {fileID: 8576468574908774510, guid: d75c969b92683844db89b6d18b06c288, type: 3}
-    identifier: 2
-    identifierString: Placeholder test screen
-    preloadWidget: 1
-    keepAlive: 0
   - prefab: {fileID: 8576468574908774510, guid: d7f413f948744d54e910f35649adf922, type: 3}
     identifier: 1
     identifierString: Trash Object Pickup Screen
