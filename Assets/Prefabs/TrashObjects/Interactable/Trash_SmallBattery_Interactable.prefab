@@ -83,7 +83,7 @@ MonoBehaviour:
   onPointerClickEditor:
     m_PersistentCalls:
       m_Calls: []
-  rigidbodyComponent: {fileID: 0}
+  rigidbodyComponent: {fileID: 5190647680940370453}
 --- !u!1 &1974400901139641743
 GameObject:
   m_ObjectHideFlags: 0
