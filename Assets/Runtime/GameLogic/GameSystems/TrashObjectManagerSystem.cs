@@ -32,9 +32,33 @@ namespace Oikos.GameLogic.Systems {
         public static TrashObjectData LastTrashObjectHit { get; private set; }
         
         /// <summary>
-        /// The TrashObjectData file of the last Trash Interactable Object hit
+        /// The TrashObject's Spawn point of the list Trash Object hit
         /// </summary>
         public static InteractableTrashobject LastTrashObjectHitInteractablePoint { get; private set; }
+
+        /// <summary>
+        /// The number of spawned Trash Objects on the scene.
+        /// </summary>
+        public static int NumberOfTrashObjectsSpawned { get; private set; } = 0;
+
+        /// <summary>
+        /// The number of Trash Objects on the scene that have been picked up by the player.
+        /// </summary>
+        public static int PickedUpTrashObjects { get; private set; } = 0;
+        
+        /// <summary>
+        /// Triggered when the player pickup a Trash Object set on the current scene.
+        /// </summary>
+        public static event Action OnTrashobjectPickedup { add { onObjectPickedUp += value; } remove { onObjectPickedUp -= value; } }
+        
+        #endregion
+
+        #region Events
+
+        /// <summary>
+        /// Triggered when the player picked up a trash object set on the current scene.
+        /// </summary>
+        private static Action onObjectPickedUp;
 
         #endregion
         
@@ -42,7 +66,9 @@ namespace Oikos.GameLogic.Systems {
 
         public override void InitializeSystem() {
             InternalName = $"TrashObjectLevelSystem";
-            
+
+            NumberOfTrashObjectsSpawned = 0;
+            PickedUpTrashObjects = 0;
             LastTrashObjectHit = null;
             
             LoadGameplayContent();
@@ -51,10 +77,16 @@ namespace Oikos.GameLogic.Systems {
         }
 
         public override void ReloadSystem() {
+            NumberOfTrashObjectsSpawned = 0;
+            PickedUpTrashObjects = 0;
+            LastTrashObjectHit = null;
+            
             LoadGameplayContent();
         }
 
         public override void DisposeSystem() {
+            NumberOfTrashObjectsSpawned = 0;
+            PickedUpTrashObjects = 0;
             LastTrashObjectHit = null;
         }
 
@@ -153,7 +185,12 @@ namespace Oikos.GameLogic.Systems {
                 
                 //Remove this spawn point and item from the lists
                 _sceneObjectsSpawnPoints.Remove(_sceneObjectsSpawnPoints.First()); //Remove the spawn point
+
+                NumberOfTrashObjectsSpawned++;
             }
+            
+            //Enable the UI
+            UIWidgetSystem.EnableUIWidget(E_UI_WIDGET_TYPE.TRASH_GAMEPLAY_UI_STATE);
             
             Logger.Trace("TrashObjectManager System", $"Gameplay context related content loaded.");
         }
@@ -165,11 +202,18 @@ namespace Oikos.GameLogic.Systems {
         private void OnTrashObjectPickedUp(InteractableTrashobject _objectClicked) {
             LastTrashObjectHit = _objectClicked.TrashObjectData;
             LastTrashObjectHitInteractablePoint = _objectClicked;
+            PickedUpTrashObjects++;
 
             if (GameSystemModule.IsSystemLaunched(E_GAME_SYSTEM_TYPE.ORBITAL_CAMERA_CONTROLLER_SPAWNER) && OrbitalCameraSpawnerSystem.OrbitalCameraController != null) {
                 OrbitalCameraSpawnerSystem.OrbitalCameraController.MoveTrashObjectToViewPoint(_objectClicked, 1f);
                 OrbitalCameraSpawnerSystem.OrbitalCameraController.ZoomMax();
             }
+            
+            //Trigger the event
+            onObjectPickedUp?.Invoke();
+            
+            //Disable the UI
+            UIWidgetSystem.DisableUIWidget(E_UI_WIDGET_TYPE.TRASH_GAMEPLAY_UI_STATE);
             
             UIWidgetSystem.EnableUIWidget(E_UI_WIDGET_TYPE.TRASH_OBJECT_WORLD_IMPACT_DESC_SCREEN);
         }
@@ -178,6 +222,9 @@ namespace Oikos.GameLogic.Systems {
             if (GameSystemModule.IsSystemLaunched(E_GAME_SYSTEM_TYPE.ORBITAL_CAMERA_CONTROLLER_SPAWNER) && OrbitalCameraSpawnerSystem.OrbitalCameraController != null) {
                 OrbitalCameraSpawnerSystem.OrbitalCameraController.MoveTrashObjectOutOfCameraView(LastTrashObjectHitInteractablePoint, 1f, () => MonoBehaviour.Destroy(LastTrashObjectHitInteractablePoint.gameObject));
             }
+            
+            //Enable the UI
+            UIWidgetSystem.EnableUIWidget(E_UI_WIDGET_TYPE.TRASH_GAMEPLAY_UI_STATE);
             
             UIWidgetSystem.DisableUIWidget(E_UI_WIDGET_TYPE.TRASH_OBJECT_WORLD_IMPACT_DESC_SCREEN);
         }

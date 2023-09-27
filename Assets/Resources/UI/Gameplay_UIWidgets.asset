@@ -18,3 +18,8 @@ MonoBehaviour:
     identifierString: Trash Object Pickup Screen
     preloadWidget: 0
     keepAlive: 0
+  - prefab: {fileID: 7695231485142866432, guid: 0ec8eed2e2757dc4d9b1653a7adf1dd4, type: 3}
+    identifier: 3
+    identifierString: Trash Object Gamplay UI
+    preloadWidget: 0
+    keepAlive: 0

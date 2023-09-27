@@ -30,6 +30,10 @@ MonoBehaviour:
     m_Localized: "Majoritairement compos\xE9 avec"
     m_Metadata:
       m_Items: []
+  - m_Id: 2530112274165760
+    m_Localized: "D\xE9chets ramass\xE9s"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
