@@ -1,6 +1,12 @@
+using System;
+using System.Collections;
+using System.Numerics;
 using Oikos.Core;
+using Oikos.GameLogic.Interactable;
 using UnityEngine;
 using Logger = Oikos.Core.Logger;
+using Quaternion = UnityEngine.Quaternion;
+using Vector3 = UnityEngine.Vector3;
 
 namespace Oikos.GameLogic.Controller {
 
@@ -14,6 +20,7 @@ namespace Oikos.GameLogic.Controller {
         [Header("Orbital Camera Controller - References")]
         [SerializeField, InspectorName("Target to rotate around"), Tooltip("The Transform to rotate around.\nIf not specified, Vector3.Zero will be taken")] private Transform target = null;
         [SerializeField, InspectorName("Camera's anchor/parent"), Tooltip("The Transform of the anchor/parent of the Camera")] private Transform cameraAnchor = null;
+        [SerializeField, Tooltip("The point to view the Trash Object on the scene more closely during runtime.")] private Transform trashObjectViewPoint = null;
         
         [Header("Orbital Camera Controller - Settings (Will ported to a SO)")]
         [SerializeField] private float minXLookAngle = -60;
@@ -133,6 +140,94 @@ namespace Oikos.GameLogic.Controller {
             Zoom = Mathf.Clamp(Zoom, minZoom, maxZoom); //Clamp the zoom value
             CameraComponent.fieldOfView = Mathf.SmoothDamp(CameraComponent.fieldOfView, Zoom, ref smoothingZoomVelocity, zoomSmoothing);
         }
+        
+        public void ZoomMax() {
+            Zoom = maxZoom;
+            CameraComponent.fieldOfView = Mathf.SmoothDamp(CameraComponent.fieldOfView, Zoom, ref smoothingZoomVelocity, zoomSmoothing);
+        }
+
+        /// <summary>
+        /// Move the a trash object from the scene into the TrashObjectViewPoint (Smooth).
+        /// </summary>
+        /// <param name="_trashObject">The TrashObject on the scene to move.</param>
+        /// <param name="_time">The time to move the object.</param>
+        /// <param name="_onMovementFinished">The instructions to do when the movement operation is over.</param>
+        private IEnumerator MoveTrashObjectToViewPointInternal(InteractableTrashobject _trashObject, float _time, Action _onMovementFinished = null) {
+            _trashObject.RigidbodyComponent.isKinematic = true; //Disable the Rigidbody
+            //_trashObject.transform.parent = trashObjectViewPoint; //Set the new parent
+            
+            float _elapsedTime = 0f;
+            Vector3 _startPos = _trashObject.gameObject.transform.position;
+            Vector3 _endPos = trashObjectViewPoint.position;
+            Quaternion _startRot = _trashObject.gameObject.transform.rotation;
+            Quaternion _endRot = trashObjectViewPoint.rotation;
+            
+            while (_elapsedTime < _time) {
+                _trashObject.gameObject.transform.position = Vector3.Lerp(_startPos, _endPos, (_elapsedTime / _time));
+                _trashObject.gameObject.transform.rotation = Quaternion.Lerp(_startRot, _endRot, (_elapsedTime / _time));
+ 
+                _elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+            
+            //Set the end values
+            _trashObject.gameObject.transform.position = _endPos;
+            _trashObject.transform.rotation = _endRot;
+            
+            
+            _onMovementFinished?.Invoke(); //Trigger the event when finished
+
+            yield return null;
+        }
+        
+        /// <summary>
+        /// Move the a trash object from the scene to a point not visible by the camera (Above) (Smooth).
+        /// </summary>
+        /// <param name="_trashObject">The TrashObject on the scene to move.</param>
+        /// <param name="_time">The time to move the object.</param>
+        /// <param name="_onMovementFinished">The instructions to do when the movement operation is over.</param>
+        private IEnumerator MoveTrashObjectOutOfCameraViewInternal(InteractableTrashobject _trashObject, float _time, Action _onMovementFinished = null) {
+            _trashObject.RigidbodyComponent.isKinematic = true; //Disable the Rigidbody
+            
+            float _elapsedTime = 0f;
+            Vector3 _startPos = _trashObject.gameObject.transform.position;
+            Vector3 _endPos = new Vector3(trashObjectViewPoint.position.x, trashObjectViewPoint.position.y + 10, trashObjectViewPoint.position.z);
+            
+            while (_elapsedTime < _time) {
+                _trashObject.gameObject.transform.position = Vector3.Lerp(_startPos, _endPos, (_elapsedTime / _time));
+ 
+                _elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+            
+            //Set the end values
+            _trashObject.gameObject.transform.position = _endPos;
+            
+            _onMovementFinished?.Invoke(); //Trigger the event when finished
+
+            yield return null;
+        }
+
+        /// <summary>
+        /// <inheritdoc cref="MoveTrashObjectToViewPointInternal"/>
+        /// </summary>
+        /// <param name="_trashObject"><inheritdoc cref="MoveTrashObjectToViewPointInternal"/></param>
+        /// <param name="_time"><inheritdoc cref="MoveTrashObjectToViewPointInternal"/></param>
+        /// <param name="_onMovementFinished"><inheritdoc cref="MoveTrashObjectToViewPointInternal"/></param>
+        public void MoveTrashObjectToViewPoint(InteractableTrashobject _trashObject, float _time, Action _onMovementFinished = null) {
+            StartCoroutine(MoveTrashObjectToViewPointInternal(_trashObject, _time, _onMovementFinished));
+        }
+        
+        /// <summary>
+        /// <inheritdoc cref="MoveTrashObjectOutOfCameraViewInternal"/>
+        /// </summary>
+        /// <param name="_trashObject"><inheritdoc cref="MoveTrashObjectOutOfCameraViewInternal"/></param>
+        /// <param name="_time"><inheritdoc cref="MoveTrashObjectOutOfCameraViewInternal"/></param>
+        /// <param name="_onMovementFinished"><inheritdoc cref="MoveTrashObjectOutOfCameraViewInternal"/></param>
+        public void MoveTrashObjectOutOfCameraView(InteractableTrashobject _trashObject, float _time, Action _onMovementFinished = null) {
+            StartCoroutine(MoveTrashObjectOutOfCameraViewInternal(_trashObject, _time, _onMovementFinished));
+        }
+        
         
         #endregion
         
