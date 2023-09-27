@@ -228,7 +228,6 @@ namespace Oikos.GameLogic.Controller {
             StartCoroutine(MoveTrashObjectOutOfCameraViewInternal(_trashObject, _time, _onMovementFinished));
         }
         
-        
         #endregion
         
     }

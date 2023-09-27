@@ -15,7 +15,7 @@ LightingSettings:
   m_BounceScale: 1
   m_AlbedoBoost: 1
   m_IndirectOutputScale: 1
-  m_UsingShadowmask: 0
+  m_UsingShadowmask: 1
   m_BakeBackend: 2
   m_LightmapMaxSize: 1024
   m_BakeResolution: 80
@@ -26,7 +26,7 @@ LightingSettings:
   m_CompAOExponent: 2
   m_CompAOExponentDirect: 0.5
   m_ExtractAO: 0
-  m_MixedBakeMode: 1
+  m_MixedBakeMode: 2
   m_LightmapsBakeMode: 1
   m_FilterMode: 1
   m_LightmapParameters: {fileID: 111300000, guid: 75c9a16db15f5694d9b02e6b57e77803, type: 2}
@@ -38,7 +38,7 @@ LightingSettings:
   m_FinalGather: 0
   m_FinalGatherRayCount: 256
   m_FinalGatherFiltering: 1
-  m_PVRCulling: 0
+  m_PVRCulling: 1
   m_PVRSampling: 1
   m_PVRDirectSampleCount: 64
   m_PVRSampleCount: 1024
