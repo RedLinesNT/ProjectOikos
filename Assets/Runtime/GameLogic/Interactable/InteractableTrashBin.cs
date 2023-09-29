@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Oikos.Data;
 using UnityEngine;
+using Logger = Oikos.Core.Logger;
 
 namespace Oikos.GameLogic.Interactable {
 
@@ -27,6 +28,7 @@ namespace Oikos.GameLogic.Interactable {
 
         private protected override void OnPointerClick() {
             //TODO: Implement code logic here?
+            Logger.Trace($"TrashBin {dataFile.Identifier}", "Clické!!!!");
         }
 
         private protected override void OnPointerEnter() {
