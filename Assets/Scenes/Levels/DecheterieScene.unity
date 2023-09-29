@@ -2277,7 +2277,7 @@ MonoBehaviour:
   onPointerClickEditor:
     m_PersistentCalls:
       m_Calls: []
-  dataFile: {fileID: 0}
+  dataFile: {fileID: 11400000, guid: 1d749a963a6310a48bf28b7580008fa0, type: 2}
 --- !u!65 &1375678844
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2354,7 +2354,7 @@ MonoBehaviour:
   onPointerClickEditor:
     m_PersistentCalls:
       m_Calls: []
-  dataFile: {fileID: 0}
+  dataFile: {fileID: 11400000, guid: f9634ee6856c9334da6e999cbccdd50f, type: 2}
 --- !u!65 &1430921738
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2431,7 +2431,7 @@ MonoBehaviour:
   onPointerClickEditor:
     m_PersistentCalls:
       m_Calls: []
-  dataFile: {fileID: 0}
+  dataFile: {fileID: 11400000, guid: c5ac66de26c129c419e70ccac1532a47, type: 2}
 --- !u!65 &1511373549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2508,7 +2508,7 @@ MonoBehaviour:
   onPointerClickEditor:
     m_PersistentCalls:
       m_Calls: []
-  dataFile: {fileID: 0}
+  dataFile: {fileID: 11400000, guid: f717d68c2aef6e24abdf4606ec33b4fe, type: 2}
 --- !u!65 &1582031288
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2977,7 +2977,7 @@ MonoBehaviour:
   onPointerClickEditor:
     m_PersistentCalls:
       m_Calls: []
-  dataFile: {fileID: 0}
+  dataFile: {fileID: 11400000, guid: e9ebecaa04c44834da4566f201efea3d, type: 2}
 --- !u!65 &2097122772
 BoxCollider:
   m_ObjectHideFlags: 0
