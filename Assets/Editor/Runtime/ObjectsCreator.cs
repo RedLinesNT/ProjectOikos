@@ -70,6 +70,25 @@ namespace Oikos.Editor {
             Selection.activeObject = _asset;
         }
         
+        /// <summary>
+        /// Create a TrashBinData (ScriptableObject) file
+        /// </summary>
+        [MenuItem("Oikos/Gameplay/Create new Trash Bin file...")] public static void CreateTrashBinFile() {
+            TrashBinData _asset = ScriptableObject.CreateInstance<TrashBinData>();
+            
+            if(!Directory.Exists("Assets/Resources/Gameplay/Trash Bins/")) { //Check if the directory exists
+                Directory.CreateDirectory("Assets/Resources/Gameplay/Trash Bins/");
+            }
+            
+            string _assetPath = AssetDatabase.GenerateUniqueAssetPath("Assets/Resources/Gameplay/Trash Bins/New Trash Bin.asset");
+            AssetDatabase.CreateAsset(_asset, _assetPath);
+            AssetDatabase.SaveAssets();
+            
+            EditorUtility.FocusProjectWindow();
+            
+            Selection.activeObject = _asset;
+        }
+        
     }
     
 }
