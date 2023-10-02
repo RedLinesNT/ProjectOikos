@@ -102,6 +102,8 @@ namespace Oikos.GameLogic.Controller {
             
             if(Physics.Raycast(ray, out rayHit, 500f)) { //If the Raycast hit something
                 if(((1<<rayHit.transform.gameObject.layer) & maskHit) != 0) { //The object hit has the correct layer
+                    if (rayHit.transform.gameObject == null) return;
+                    
                     onValidObjectHit?.Invoke(rayHit.transform.gameObject); //Trigger the Action event
                     onValidObjectHitEvent?.Invoke(rayHit.transform.gameObject); //Trigger the Unity Event
                     

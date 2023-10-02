@@ -31,6 +31,10 @@ MonoBehaviour:
     m_Key: picked-trash-HUD-UI
     m_Metadata:
       m_Items: []
+  - m_Id: 4242703480516608
+    m_Key: trash-center-wrong-throw
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

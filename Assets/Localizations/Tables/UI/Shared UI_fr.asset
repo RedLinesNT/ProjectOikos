@@ -31,7 +31,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2530112274165760
-    m_Localized: "D\xE9chets ramass\xE9s"
+    m_Localized: "D\xE9chets ramass\xE9s :"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4242703480516608
+    m_Localized: "Ah dommage non c\u2019est pas \xE7a, mais r\xE9fl\xE9chis encore
+      un peu, c\u2019est plus simple que tu ne le crois!"
     m_Metadata:
       m_Items: []
   references:

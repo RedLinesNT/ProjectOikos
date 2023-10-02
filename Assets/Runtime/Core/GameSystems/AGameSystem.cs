@@ -9,12 +9,12 @@ namespace Oikos.Core.Systems {
         /// <summary>
         /// Is this GameSystem initialized
         /// </summary>
-        public bool IsInitialized { get; private protected set; }
+        public static bool IsInitialized { get; private protected set; } = false;
 
         /// <summary>
         /// The internal name of this GameSystem
         /// </summary>
-        public string InternalName { get; private protected set; }
+        public static string InternalName { get; private protected set; } = string.Empty;
         
         #endregion
         

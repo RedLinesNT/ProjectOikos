@@ -216,6 +216,8 @@ namespace Oikos.GameLogic.Systems {
             UIWidgetSystem.DisableUIWidget(E_UI_WIDGET_TYPE.TRASH_GAMEPLAY_UI_STATE);
             
             UIWidgetSystem.EnableUIWidget(E_UI_WIDGET_TYPE.TRASH_OBJECT_WORLD_IMPACT_DESC_SCREEN);
+
+            
         }
 
         public static void OnPickupScreenInfoDismissed() {

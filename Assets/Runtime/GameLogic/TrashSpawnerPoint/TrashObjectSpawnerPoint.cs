@@ -66,7 +66,7 @@ namespace Oikos.GameLogic.Props.Spawners {
             
             //Spawn the trash object
             TrashObjectInstance = Instantiate(_trashObject.PickRandomPrefab(), transform.position, transform.rotation); //Instantiate the prefab
-            
+            TrashObjectInstance.TrashObjectData = _trashObject;
             //Apply the Rigidbody constraints, if there's a Rigidbody component
             if(TrashObjectInstance.RigidbodyComponent == null) return TrashObjectInstance;
             

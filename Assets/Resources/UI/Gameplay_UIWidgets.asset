@@ -23,3 +23,18 @@ MonoBehaviour:
     identifierString: Trash Object Gamplay UI
     preloadWidget: 0
     keepAlive: 0
+  - prefab: {fileID: 222406578656242035, guid: da2b12b26c8d0854ba04f5b97e2abc3d, type: 3}
+    identifier: 6
+    identifierString: Trash Center - TrashInfos
+    preloadWidget: 1
+    keepAlive: 0
+  - prefab: {fileID: 1214581960282515134, guid: 4c955eb26cc06024dbebb5f0893a22c7, type: 3}
+    identifier: 4
+    identifierString: Trash Center - Wrong Throw
+    preloadWidget: 1
+    keepAlive: 0
+  - prefab: {fileID: 8161441828421951322, guid: 1589c631a0484d1468172381eb293d67, type: 3}
+    identifier: 5
+    identifierString: Trash Center - Correct Throw
+    preloadWidget: 1
+    keepAlive: 0

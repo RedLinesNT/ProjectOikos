@@ -42,6 +42,11 @@ namespace Oikos.GameLogic.UI {
             if (Input.GetKeyDown(KeyCode.Return)) {
                 UIWidgetSystem.DisableUIWidget(E_UI_WIDGET_TYPE.TRASH_OBJECT_WORLD_IMPACT_DESC_SCREEN);
                 if (GameSystemModule.IsSystemLaunched(E_GAME_SYSTEM_TYPE.TRASH_OBJECT_SPAWNER) && TrashObjectManagerSystem.LastTrashObjectHit != null) TrashObjectManagerSystem.OnPickupScreenInfoDismissed();
+                
+                if (TrashObjectManagerSystem.PickedUpTrashObjects >= TrashObjectManagerSystem.NumberOfTrashObjectsSpawned) {
+                    //Change scene
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/Levels/DecheterieScene");
+                }
             }
         }
 

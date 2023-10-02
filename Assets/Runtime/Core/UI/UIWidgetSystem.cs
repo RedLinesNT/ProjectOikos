@@ -8,7 +8,7 @@ namespace Oikos.Core.UI {
 
     public static class UIWidgetSystem {
 
-        #region Runtime values
+        #region Attributes
 
         /// <summary>
         /// List of every "UIWidgetDefinition" referenced inside "UIWidgetReferences".
@@ -18,6 +18,34 @@ namespace Oikos.Core.UI {
         /// List of every instantiated UIWidgets
         /// </summary>
         private static List<RuntimeUIWidget> widgetsInstance = new List<RuntimeUIWidget>();
+
+        #endregion
+
+        #region Events
+
+        /// <summary>
+        /// Triggered when a UI Widget has been enabled
+        /// </summary>
+        private static Action<E_UI_WIDGET_TYPE> onWidgetEnabled;
+
+        /// <summary>
+        /// Triggered when a UI Widget has been disabled
+        /// </summary>
+        private static Action<E_UI_WIDGET_TYPE> onWidgetDisable;
+        
+        #endregion
+
+        #region Properties
+
+        public static event Action<E_UI_WIDGET_TYPE> OnWidgetEnabled {
+            add { onWidgetEnabled += value; }
+            remove { onWidgetEnabled -= value; }
+        }
+        
+        public static event Action<E_UI_WIDGET_TYPE> OnWidgetDisabled {
+            add { onWidgetDisable += value; }
+            remove { onWidgetDisable -= value; }
+        }
 
         #endregion
 
@@ -90,7 +118,8 @@ namespace Oikos.Core.UI {
                     }
                     
                     widgetsInstance[i].DisableUIWidget(); //Disable it
-
+                    onWidgetDisable?.Invoke(widgetsInstance[i].Identifier); //Trigger this event
+                    
                     return;
                 }
             }
@@ -115,6 +144,7 @@ namespace Oikos.Core.UI {
                     }
                     
                     widgetsInstance[i].DisableUIWidget(); //Disable it
+                    onWidgetDisable?.Invoke(widgetsInstance[i].Identifier); //Trigger this event
 
                     return;
                 }
@@ -140,7 +170,8 @@ namespace Oikos.Core.UI {
                     }
                     
                     widgetsInstance[i].EnableUIWidget(); //Enable it
-
+                    onWidgetEnabled?.Invoke(widgetsInstance[i].Identifier); //Trigger this event
+                    
                     return;
                 }
             }
@@ -148,6 +179,7 @@ namespace Oikos.Core.UI {
             for (int i = 0; i < widgets.Count; i++) {
                 if (widgets[i].IdentifierString == _uiWidgetStringIdentifier) {
                     widgetsInstance.Add(new RuntimeUIWidget(widgets[i], false)); //Create a new RuntimeUIWidget instance, and register it
+                    onWidgetEnabled?.Invoke(widgets[i].Identifier); //Trigger this event
                     
                     Logger.Trace("UI Widget System", $"The UIWidget '{_uiWidgetStringIdentifier}' wasn't instantiated, not it is.");
                     return;
@@ -174,6 +206,7 @@ namespace Oikos.Core.UI {
                     }
                     
                     widgetsInstance[i].EnableUIWidget(); //Enable it
+                    onWidgetEnabled?.Invoke(widgetsInstance[i].Identifier); //Trigger this event
 
                     return;
                 }
@@ -182,7 +215,8 @@ namespace Oikos.Core.UI {
             for (int i = 0; i < widgets.Count; i++) {
                 if (widgets[i].Identifier == _uiWidgetIdentifier) {
                     widgetsInstance.Add(new RuntimeUIWidget(widgets[i], false)); //Create a new RuntimeUIWidget instance, and register it
-
+                    onWidgetEnabled?.Invoke(widgets[i].Identifier); //Trigger this event
+                    
                     Logger.Trace("UI Widget System", $"The UIWidget '{_uiWidgetIdentifier}' wasn't instantiated, now it is.");
                     return;
                 }
