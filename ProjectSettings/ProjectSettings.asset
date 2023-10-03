@@ -145,8 +145,8 @@ PlayerSettings:
     enable360StereoCapture: 0
   isWsaHolographicRemotingEnabled: 0
   enableFrameTimingStats: 0
-  enableOpenGLProfilerGPURecorders: 1
-  useHDRDisplay: 0
+  enableOpenGLProfilerGPURecorders: 0
+  useHDRDisplay: 1
   hdrBitDepth: 0
   m_ColorGamuts: 00000000
   targetPixelDensity: 30
@@ -175,7 +175,7 @@ PlayerSettings:
   CreateWallpaper: 0
   APKExpansionFiles: 0
   keepLoadedShadersAlive: 0
-  StripUnusedMeshComponents: 1
+  StripUnusedMeshComponents: 0
   strictShaderVariantMatching: 0
   VertexChannelCompressionMask: 4054
   iPhoneSdkVersion: 988
@@ -339,6 +339,9 @@ PlayerSettings:
     m_Automatic: 1
   - m_BuildTarget: WebGLSupport
     m_APIs: 0b000000
+    m_Automatic: 1
+  - m_BuildTarget: WindowsStandaloneSupport
+    m_APIs: 020000001500000011000000
     m_Automatic: 1
   m_BuildTargetVRSettings:
   - m_BuildTarget: Standalone
@@ -670,6 +673,7 @@ PlayerSettings:
     PS5: 1
     QNX: 1
     Stadia: 1
+    Standalone: 3
     VisionOS: 1
     WebGL: 1
     Windows Store Apps: 1
