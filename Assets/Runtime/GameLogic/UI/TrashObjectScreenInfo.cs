@@ -1,5 +1,6 @@
 ﻿using System;
 using Oikos.Core;
+using Oikos.Core.SceneManagement;
 using Oikos.Core.Systems;
 using Oikos.Core.UI;
 using Oikos.GameLogic.Controller;
@@ -45,7 +46,7 @@ namespace Oikos.GameLogic.UI {
                 
                 if (TrashObjectManagerSystem.PickedUpTrashObjects >= TrashObjectManagerSystem.NumberOfTrashObjectsSpawned) {
                     //Change scene
-                    UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/Levels/DecheterieScene");
+                    SceneManager.FakeSceneLoad("Scenes/Levels/DecheterieScene", 1000f);
                 }
             }
         }

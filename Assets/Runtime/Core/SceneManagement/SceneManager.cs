@@ -1,6 +1,10 @@
 using System;
+using System.Collections;
 using System.Linq;
+using System.Threading;
+using Oikos.Core.UI;
 using UnityEngine;
+using Timer = System.Timers.Timer;
 
 namespace Oikos.Core.SceneManagement {
     
@@ -62,10 +66,22 @@ namespace Oikos.Core.SceneManagement {
                 PreviousActiveScene = ActiveScene;
                 ActiveScene = FindSceneGameplayDataFromPath(_scene.path);
                 onSceneLoaded?.Invoke(ActiveScene);
+                
+                UIWidgetSystem.DisableUIWidget(E_UI_WIDGET_TYPE.LOADING_SCREEN);
             };
         }
 
         #endregion
+
+        public static void FakeSceneLoad(string _sceneName, float _fakeTime) {
+            UIWidgetSystem.EnableUIWidget(E_UI_WIDGET_TYPE.LOADING_SCREEN);
+            
+            FakeSceneLoadInternal(_sceneName);
+        }
+
+        private static void FakeSceneLoadInternal(string _sceneName) {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneName);
+        }
 
         #region SceneManager's Getters
 

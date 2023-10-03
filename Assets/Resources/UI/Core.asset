@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8578bb244a2941c43bb817994650632d, type: 3}
+  m_Name: Core
+  m_EditorClassIdentifier: 
+  references:
+  - prefab: {fileID: 7809595105396099048, guid: 6962c5ada00fa254bb7587bbaaf1c60b, type: 3}
+    identifier: 7
+    identifierString: Loading Screen
+    preloadWidget: 1
+    keepAlive: 1
