@@ -64,9 +64,6 @@ namespace Oikos.GameLogic.Systems {
             objectsFromPreviousScene = dataTruc.TrashObjects.ToList();
             laVraiListMdrrr = new List<TrashObjectData>(objectsFromPreviousScene);
 
-            for (int i=0; i<trucs.Length; i++) {
-                Logger.Trace("Trash Center System", $"Trash Object '{trucs[i].InternalName}' ({trucs[i].Identifier}) has been found");
-            }
         }
 
         private void Start() {

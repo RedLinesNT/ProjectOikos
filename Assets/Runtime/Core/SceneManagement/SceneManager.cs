@@ -79,11 +79,7 @@ namespace Oikos.Core.SceneManagement {
 
             Logger.Trace("Timer", "Je prepare le timer");
             
-            Timer fakeTimer = new Timer();
-            fakeTimer.Elapsed += (sender, args) => { FakeSceneLoadInternal(_sceneName); };
-            fakeTimer.Interval = 5000f; //5 Seconds
-            fakeTimer.AutoReset = false;
-            fakeTimer.Start();
+            FakeSceneLoadInternal(_sceneName);
 
             Logger.Trace("Timer", "Je lance le timer");
         }
