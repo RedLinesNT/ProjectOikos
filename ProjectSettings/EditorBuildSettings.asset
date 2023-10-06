@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/TechDemoGameplayScene.unity
     guid: 5d5dfb78d855b874b89ac1ff01ade1e1
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
     path: Assets/Scenes/Levels/DecheterieScene.unity
     guid: b5e9ce83dcdb14543887f65529b57733
   m_configObjects:

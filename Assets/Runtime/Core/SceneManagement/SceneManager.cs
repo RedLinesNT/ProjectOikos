@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Linq;
 using System.Threading;
+using System.Timers;
 using Oikos.Core.UI;
 using UnityEngine;
 using Timer = System.Timers.Timer;
@@ -75,11 +76,21 @@ namespace Oikos.Core.SceneManagement {
 
         public static void FakeSceneLoad(string _sceneName, float _fakeTime) {
             UIWidgetSystem.EnableUIWidget(E_UI_WIDGET_TYPE.LOADING_SCREEN);
+
+            Logger.Trace("Timer", "Je prepare le timer");
             
-            FakeSceneLoadInternal(_sceneName);
+            Timer fakeTimer = new Timer();
+            fakeTimer.Elapsed += (sender, args) => { FakeSceneLoadInternal(_sceneName); };
+            fakeTimer.Interval = 5000f; //5 Seconds
+            fakeTimer.AutoReset = false;
+            fakeTimer.Start();
+
+            Logger.Trace("Timer", "Je lance le timer");
         }
 
         private static void FakeSceneLoadInternal(string _sceneName) {
+            Logger.Trace("Timer", "Le timer a terminé d'attendre 5000MS");
+
             UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneName);
         }
 

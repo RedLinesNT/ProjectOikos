@@ -63,6 +63,10 @@ namespace Oikos.GameLogic.Systems {
             TrashObjectData[] trucs = null;
             objectsFromPreviousScene = dataTruc.TrashObjects.ToList();
             laVraiListMdrrr = new List<TrashObjectData>(objectsFromPreviousScene);
+
+            for (int i=0; i<trucs.Length; i++) {
+                Logger.Trace("Trash Center System", $"Trash Object '{trucs[i].InternalName}' ({trucs[i].Identifier}) has been found");
+            }
         }
 
         private void Start() {
@@ -81,10 +85,13 @@ namespace Oikos.GameLogic.Systems {
                 Logger.Trace("Trash Center System", "Every trash object has been showed.");
                 return; 
             }
-             
+            
+            
             CurrentTrashObjectShowed = laVraiListMdrrr.Find(_item => _item == objectsFromPreviousScene.First());
             onShouldShowTrashObject?.Invoke(); //Trigger the internal event
             onShouldShowTrashObjectEditor?.Invoke(); //Trigger the editor event
+            
+            Logger.Trace("Trash Center System", $"Showing Trash Object '{CurrentTrashObjectShowed.InternalName}' ({CurrentTrashObjectShowed.Identifier})");
             
             //Remove the element
             objectsFromPreviousScene.Remove(objectsFromPreviousScene.First());
