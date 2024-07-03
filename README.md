@@ -1,47 +1,55 @@
-# Project Oikos
+<div align="center"> <img src="https://github.com/RedLinesNT/ProjectOikos/blob/main/Visual/Oikos_Wide.png"> </div>
+Proof-Of-Concept of an educational game for young children about the importance of recycling.<br/>
+Please note that this project only has the purpose of "showcasing" something somewhat playable, don't except anything clean :)
 
 <hr>
 
-## Table des matières
+Project realized by:<br/>
+   * [Carla MALERGUE (3D Artist)](https://www.linkedin.com/in/carla-malergue-b492272a9/)<br/>
+   * [Baptiste PELLETIER (3D Artist)](https://www.linkedin.com/in/baptiste-pelletier-269597233/)<br/>
+   * [Vasgen VARDANIAN (Game Designer)](https://www.linkedin.com/in/vasguen-vardanian/)<br/>
+   * [Léo GRIFFOULIERE (Programmer)](https://www.linkedin.com/in/l%C3%A9o-griffouli%C3%A8re/)<br/>
+
+<hr>
+
+## Summary
 
 <!--ts-->
-   * [Programmes requis](#programmes-requis)
-   * [Packages du projet](#packages-du-projet)
-   * [Norme de programmation](#norme-de-programmation)
-   * [Signaler un problème](#signler-un-problème)
+   * [Required programs](#required-programs)
+   * [Project packages](#project-packages)
+   * [Programming standards](#programming-standards)
    * [Documentation](#documentation)
 <!--te-->
 
 <hr>
 
-## Programmes requis
-  - GitHub Desktop
+## Required programs
   - Unity Hub
   - Unity Engine (2022.3.5f1 - LTS)
 
-Les programmeurs auront besoin d'avoir un "IDE" de leur choix. Ces deux IDE sont recommandés :
+Programmers will need an IDE of their choice, these twos are recommended :
   - Visual Studio Community 2019/2022
   - JetBrains Rider 2023
 
-### Vous ne possedez pas la version d'Unity mentionné au dessus ?
-  Pour installer la version du moteur demandée avec Unity Hub, rendez-vous sur [cette page d'Unity](https://unity.com/releases/editor/whats-new/2022.3.5).<br>
-  En haut de cette page, cliquez sur "<i>Install this version with Unity Hub</i>".
+### Missing the Unity version mentionned above ?
+  To install the engine version required with Unity Hub, go to [this page from Unity](https://unity.com/releases/editor/whats-new/2022.3.5).<br>
+  And at the top of this page, click on "<i>Install this version with Unity Hub</i>", then Unity Hub will deal with the rest.
 
 <hr>
 
-## Modules du moteur
-  Pour être en mesure de faire des builds du projet, certains modules du moteur sont nécessaire.<br>
-  <i>Notez que ces modules sont optionnels pour les membres ne cherchant pas à faire des versions deployable du projet.</i><br>
-  Pour ajouter des modules à une version d'Unity déjà installée, rendez-vous dans Unity Hub, puis dans "<i><strong>Install</strong></i>" > "<i><strong>2022.3.5f1</strong></i>" > "<i><strong>Add Modules</strong></i>". Et sélectionnez les modules suivant : 
+## Engine modules
+  To be able to build the project, certain modules are required.<br>
+  <i>Note that these modules are optional for members who do not wish to make deployable versions of the project.</i><br>
+  To add modules to an already installed version of Unity, go to Unity Hub, then to "<i><strong>Install</strong></i>" > "<i><strong>2022.3.5f1</strong></i>" > "<i><strong>Add Modules</strong></i>". And select the following modules : 
   - Linux Build Support (IL2CPP) - (217 MB)
   - Mac Build Support (Mono) - (1.87 GB)
   - Windows Build Support (IL2CPP) - (418 MB)
 
 <hr>
 
-## Packages du projet
+## Project packages
 
-Voici la liste des packages installés sur ce projet :
+Here's the list of packages currently installed :
  - 2D Sprite (1.0.0)
  - Autodesk FBX SDK for Unity (4.2.1)
  - Burst (1.8.8)
@@ -67,13 +75,13 @@ Voici la liste des packages installés sur ce projet :
 
 <hr>
 
-## Norme de programmation
+## Programming standards
 
   Class :
     ```
     CamelCase
     ```<br>
-  Attributs :
+  Attributes :
     ```
     camelCase
     ```<br>
@@ -81,48 +89,31 @@ Voici la liste des packages installés sur ce projet :
     ```
     _camelCase
     ```<br>
-  Methodes :
+  Methods :
     ```
     CamelCase()
     ```<br>
   Enums :
     ```
-    E_NAME_OF_ENUM
+    ENameOfEnum
     ```<br>
-  Valeur d'un Enum :
+  Enum's Values :
     ```
     VALUE
     ```<br><br>
-L'entièreté des attributs doivent être en private. Utilisez à la place des <i>Properties</i> ou des <i>Getters/Setters</i>.<br>
-<strong>Tous les noms doivent être de préférence en anglais!</strong>
+All attributes must be private, use Properties or Getters/Setters instead.<br/>
+Every names/comments MUST be in English, no matter how broken yours is.
 
-### Commentaires
-  Afin que votre code puisse être comprit par le reste de l'équipe, il est important de commenter votre code.<br>
-  Commentez votre code avec des "<i>//</i>" pour les attributs et les variables et des passages de code si nécessaire!<br>
-  Commentez vos "<i>methods</i>" avec des ```<summary>```.
-
-<hr>
-
-## Signler un problème
-  C'est super simple!<br>
-  Rendez-vous dans la categorie "<i>Issues</i>" de Github (sur la page web), puis crèez une nouvelle issue.<br>
-  Regardez l'issue "Exemple" pour en créer une nouvelle.
-  
 <hr>
 
 ## Documentation
-  Vous trouverez ici des liens vers de la documentation pour par exemple:
-	- Intégrer du contenu comme des textures/modèles dans le projet
-	- Utilisation de certains outils d’Unity ainsi que ceux conçus pour ce projet.
-	- Documentation du code
-
-  Documents utiles :<br>
+  Useful docs :<br>
 <!--ts-->
-   * <a href="Docs/Import_Texture_Documentation.pdf">Exporter ses textures (Importation dans le moteur)</a>
+   * <a href="Docs/Import_Texture_Documentation.pdf">Export your textures from Substance to Unity.</a>
 <!--te-->
   
 <hr>
 
-Le projet à <i>1'760</i> lignes de code (C#)
+The project currently have <i>1'760</i> lines of code (C#)
 
 <hr>  
